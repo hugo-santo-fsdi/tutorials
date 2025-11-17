@@ -54,6 +54,7 @@
             'website_airproof/static/src/js/html_builder/plugins/background_option/background_shapes_definition.js',
             'website_airproof/static/src/js/html_builder/plugins/options/header/header_template_option.xml',
             'website_airproof/static/src/js/html_builder/plugins/options/footer_template_option.xml',
+            'website_airproof/static/src/js/html_builder/plugins/options/mega_menu_option.xml',
         ],
         'html_editor.assets_editor': [
             'website_airproof/static/src/js/html_editor/main/font/color_picker_gradient_tab.js',
