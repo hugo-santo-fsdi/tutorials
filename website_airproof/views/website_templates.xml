@@ -2,7 +2,7 @@
 <odoo>
 <!-- HEADER -->
     <!-- Add option header -->
-    <template id="template_header_opt" inherit_id="website.snippet_options" name="Airproof Header Template - Option">
+    <!-- <template id="template_header_opt" inherit_id="website.snippet_options" name="Airproof Header Template - Option">
         <xpath expr="//we-select[@data-variable='header-template']" position="inside">
             <we-button title="Airproof"
                 data-customize-website-views="website_airproof.header"
@@ -16,7 +16,7 @@
                 data-img="/website_airproof/static/src/img/wbuilder/template-header-opt.svg"
                 t-out="_label"/>
         </xpath>
-    </template>
+    </template> -->
     <!-- Custom header -->
     <record id="header" model="ir.ui.view">
         <field name="name">Airproof header</field>
@@ -160,11 +160,11 @@
 
 <!-- FOOTER -->
     <!-- Add option footer -->
-    <template id="template_footer_opt" inherit_id="website.snippet_options" name="Airproof Footer Template - Option">
+    <!-- <template id="template_footer_opt" inherit_id="website.snippet_options" name="Airproof Footer Template - Option">
         <xpath expr="//we-select[@data-variable='footer-template']" position="inside">
             <we-button title="Airproof" data-customize-website-views="website_airproof.footer" data-customize-website-variable="'airproof'" data-img="/website_airproof/static/src/img/wbuilder/template-footer-opt.svg" />
         </xpath>
-    </template>
+    </template> -->
     <!-- Custom Footer -->
     <record id="footer" model="ir.ui.view">
         <field name="name">Airproof Footer</field>

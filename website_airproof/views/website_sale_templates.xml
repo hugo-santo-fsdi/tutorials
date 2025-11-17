@@ -9,9 +9,9 @@
 
 <!-- SHOP PAGE -->
     <template id="products" inherit_id="website_sale.products" name="Airproof - Products">
-        <xpath expr="//div[hasclass('oe_website_sale')]" position="attributes">
+        <!-- <xpath expr="//div[hasclass('oe_website_sale')]" position="attributes">
             <attribute name="class" add="pt-5" remove="pt-2" separator=" "/>
-        </xpath>
+        </xpath> -->
         <!-- Add banner -->
         <xpath expr="//*[@id='oe_structure_website_sale_products_1']" position="inside">
             <section class="s_title bg-black-50 o_colored_level s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center pt88 pb88" data-vcss="001" data-snippet="s_title" data-scroll-background-ratio="0" data-name="Title" style="background-image: url('/web/image/website_airproof.img_topview3');">
@@ -33,9 +33,9 @@
             <xpath expr="//t[@t-call='website_sale.products_breadcrumb']" position="move"/>
         </xpath>
         <!-- Button sort by -->
-        <xpath expr="//t[@t-call='website_sale.sort']/t[@t-set='_classes']" position="attributes">
+        <!-- <xpath expr="//t[@t-call='website_sale.sort']/t[@t-set='_classes']" position="attributes">
             <attribute name="t-valuef" add="rounded px-3 py-1" remove="" separator=" "/>
-        </xpath>
+        </xpath> -->
     </template>
 
     <!-- Disable Search in shop & product page -->
@@ -65,19 +65,19 @@
             <attribute name="class" add="col-lg-2" remove="col-lg-4" separator=" "/>
         </xpath>
         <!-- Adapt "Add to wishlist" button -->
-        <xpath expr="//div[@id='add_to_cart_wrap']" position="attributes">
+        <!-- <xpath expr="//div[@id='add_to_cart_wrap']" position="attributes">
             <attribute name="t-attf-class" add="my-2 me-4" remove="mb-2 me-auto" separator=" "/>
-        </xpath>
-        <xpath expr="//div[@id='product_option_block']" position="attributes">
+        </xpath> -->
+        <!-- <xpath expr="//div[@id='product_option_block']" position="attributes">
             <attribute name="class" remove="w-100" separator=" "/>
-        </xpath>
+        </xpath> -->
         <!-- Change icon "add to cart" -->
-        <xpath expr="//*[@id='add_to_cart']/i" position="replace">
+        <!-- <xpath expr="//*[@id='add_to_cart']/i" position="replace">
             <img src="/web/image/website_airproof.img_shopping" alt="Shopping icon" class="img img-fluid me-1"/>
             Add to cart
-        </xpath>
+        </xpath> -->
         <!-- Delete product specifications to move in accordion -->
-        <xpath expr="//div[@id='product_attributes_simple']" position="replace"/>
+        <!-- <xpath expr="//div[@id='product_attributes_simple']" position="replace"/> -->
         <!-- Add drop zone on all products -->
         <xpath expr="//section[@id='product_detail']" position="after">
             <div id="oe_structure_layout_airproof_products" class="oe_structure oe_empty" data-editor-message="DROP ZONE VISIBLE ACROSS ALL PRODUCTS"/>
