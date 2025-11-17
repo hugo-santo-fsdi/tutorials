@@ -12,13 +12,13 @@ $display-font-sizes: (
   4: 3.5rem,
   5: 3rem,
   6: 2.5rem
-);
+) !default;
 
 $headings-font-weight: 700 !default;
 $font-weight-normal: 400 !default;
 
 // Buttons + Forms
-$input-border-radius: 10px !default;
+$input-border-radius: 0.625rem !default;
 $input-border-color: o-color('black') !default;
 $input-border-width: 1px !default;
 $form-check-input-checked-color: o-color('black') !default;
