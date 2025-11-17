@@ -50,6 +50,11 @@
             # JS
             'website_airproof/static/src/js/mouse_follower.js',
         ],
+
+        # Builder Option Plugins
+        'html_builder.assets': [
+            'website_airproof/static/src/js/html_builder/plugins/background_option/background_shapes_definition.js',
+        ],
     },
     'new_page_templates': {
         'airproof': {

@@ -68,11 +68,8 @@ $o-selected-color-palettes-names: append($o-selected-color-palettes-names, 'airp
 // Shapes
 $o-bg-shapes: map-merge($o-bg-shapes,
     (
-        'illustration': map-merge(
-            map-get($o-bg-shapes, 'illustration') or (),
-            (
-                'airproof/waves': ('position': left bottom, 'size': 100% auto, 'colors': (1), 'repeat-y': false),
-            ),
+        'website_airproof': (
+            'waves/01': ('position': left bottom, 'size': 100% auto, 'colors': (1), 'repeat-y': false),
         ),
     )
 );

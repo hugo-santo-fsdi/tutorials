@@ -2,9 +2,9 @@
 <odoo>
     <!-- Background shapes -->
     <record id="shape_waves" model="ir.attachment">
-        <field name="name">waves.svg</field>
-        <field name="datas" type="base64" file="website_airproof/static/shapes/airproof/waves.svg"/>
-        <field name="url">/web_editor/shape/illustration/airproof/waves.svg</field>
+        <field name="name">waves_01.svg</field>
+        <field name="datas" type="base64" file="website_airproof/static/shapes/waves/01.svg"/>
+        <field name="url">/html_editor/shape/illustration/waves/01.svg</field>
         <field name="public" eval="True"/>
     </record>
 </odoo>
