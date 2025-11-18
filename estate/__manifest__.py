@@ -15,4 +15,6 @@
     ],
     'application': True,
     'installable': True,
+    'author': "Odoo",
+    'license': 'AGPL-3'
 }

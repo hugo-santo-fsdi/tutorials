@@ -5,7 +5,7 @@ from dateutil.relativedelta import relativedelta
 class EstateProperty(models.Model):
     _name = "estate.property"
     _description = "Estate property model"
-    
+
     name = fields.Char('Property name', required=True, default="Unknown")
     description = fields.Text('Property description')
     postcode = fields.Char()
