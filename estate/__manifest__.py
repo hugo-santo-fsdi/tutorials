@@ -1,15 +1,12 @@
-# -*- coding: utf-8 -*-
 {
     'name': "Real Estate",
 
     'summary': """
         Cool Real Estate App 
     """,
-
     'description': """
         Cool Real Estate App 
     """,
-
     'author': "kmhma",
     'website': "https://www.odoo.com/",
     'category': 'Tutorials',
@@ -18,7 +15,9 @@
     'installable': True,
     'depends': ['base'],
 
-    'data': [],
+    'data': [
+        "security/ir.model.access.csv"
+    ],
     'assets': {
     },
     'license': 'AGPL-3'
