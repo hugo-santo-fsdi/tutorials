@@ -2,10 +2,10 @@
     'name': "Real Estate",
 
     'summary': """
-        Cool Real Estate App 
+        Cool Real Estate App
     """,
     'description': """
-        Cool Real Estate App 
+        Cool Real Estate App
     """,
     'author': "kmhma",
     'website': "https://www.odoo.com/",
@@ -16,7 +16,9 @@
     'depends': ['base'],
 
     'data': [
-        "security/ir.model.access.csv"
+        "security/ir.model.access.csv",
+        "views/estate_property_views.xml",
+        "views/estate_menus.xml"
     ],
     'assets': {
     },
