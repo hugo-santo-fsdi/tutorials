@@ -9,6 +9,9 @@
         Testing the description real estate module
     """,
     'depends': ['base'],
+    'data': [
+        'security/ir.model.access.csv',
+    ],
     'application': True,
     'installable': True,
 }
