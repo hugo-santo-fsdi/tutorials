@@ -8,6 +8,7 @@
     'description': """
         Testing the description real estate module
     """,
+    'depends': ['base'],
     'application': True,
-    'depends': ['base']
+    'installable': True,
 }
