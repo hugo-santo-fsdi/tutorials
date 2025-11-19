@@ -23,12 +23,7 @@ class EstateProperty(models.Model):
     garden_area = fields.Integer()
     garden_orientation = fields.Selection(
         string="Orientation",
-        selection=[
-            ("north", "N"),
-            ("south", "S"),
-            ("east", "E"),
-            ("west", "W"),
-        ],
+        selection=[("north", "N"), ("south", "S"), ("east", "E"), ("west", "W")],
         help="Orientation of the garden",
     )
     last_seen = fields.Datetime("Last Seen", default=fields.Datetime.now)
@@ -44,3 +39,22 @@ class EstateProperty(models.Model):
         ],
         default="new",
     )
+
+    property_type_id = fields.Many2one(
+        'estate.property.type', string='Property Type', ondelete='restrict'
+    )
+
+    salesperson_id = fields.Many2one(
+        'res.partner',
+        string='Salesman',
+        ondelete='restrict',
+        default=lambda self: self.env.user.partner_id,
+    )
+
+    buyer_id = fields.Many2one(
+        'res.users', string='Buyer', ondelete='restrict', copy=False
+    )
+
+    property_tags_ids = fields.Many2many("estate.property.tag", string="Tags")
+
+    offer_ids = fields.One2many("estate.property.offer", "property_id", string="Offers")
