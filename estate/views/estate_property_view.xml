@@ -77,13 +77,13 @@
         <field name="arch" type="xml">
             <search string="Search properties">
                 <field name="name" string="Property Name" />
-                <field name="bedrooms"/>
+                <field name="bedrooms" string="Number Of Bedrooms"/>
                 <separator/>
-                <group expand="1" string="Group By">
-                    <filter string="Postal Code" name="postal_code" context="{'group_by':'postcode', 'residual_visible':True}"/>
-                </group>
-                <group expand="1" string="Specific Filters">
-                    <filter string="Available Properties" name="available_properties" domain="[('state','in',('new','offer_received'))]"/>
+                <group>
+                    <filter string="Postal Code" name="postal_code" context="{'group_by':'postcode'}"/>
+                </group> 
+                <group>
+                    <filter string="Available Properties" name="property_state" domain="[('state','in',('new','offer_received'))]"/>
                 </group>
             </search>
         </field>
