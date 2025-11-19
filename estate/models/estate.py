@@ -5,16 +5,18 @@ class EstateProperty(models.Model):
     _name = "estate.property"
     _description = "Estate property model"
 
-    name = fields.Char("Property name", required=True, default="Unknown")
-    description = fields.Text("Property description")
-    postcode = fields.Char()
-    expected_price = fields.Float("Property expected price", required=True)
+    name = fields.Char("Title", required=True, default="Unknown")
+    description = fields.Text("Description")
+    postcode = fields.Char("Postcode")
+    expected_price = fields.Float("Expected Price", required=True)
     date_availability = fields.Date(
-        default=fields.Date.add(fields.Date.today(), months=3), copy=False
+        "Available From",
+        default=fields.Date.add(fields.Date.today(), months=3),
+        copy=False,
     )
-    selling_price = fields.Float(readonly=True, copy=False)
-    bedrooms = fields.Integer(default=2)
-    living_area = fields.Integer()
+    selling_price = fields.Float("Selling Price", readonly=True, copy=False)
+    bedrooms = fields.Integer("Bedrooms", default=2)
+    living_area = fields.Integer("Living Area (sqm)")
     facades = fields.Integer()
     garage = fields.Boolean()
     garden = fields.Boolean()
@@ -25,7 +27,7 @@ class EstateProperty(models.Model):
             ("north", "N"),
             ("south", "S"), 
             ("east", "E"), 
-            ("west", "W")
+            ("west", "W"),
         ],
         help="Orientation of the garden",
     )
