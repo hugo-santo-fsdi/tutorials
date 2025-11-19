@@ -11,6 +11,7 @@
                 <field name="living_area"/>
                 <field name="expected_price"/>
                 <field name="facades"/>
+                <field name="property_type_id"/>
 
                 <filter string="Available" name="state" domain="['|', ('state', '=', 'new'), ('state', '=', 'offer received')]"/>
 

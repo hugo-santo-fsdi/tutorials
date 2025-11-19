@@ -7,22 +7,26 @@
             <form string="Properties">
                 <sheet>
                     <group>
-                            <h1 class="mb32">
+                        <h1 class="mb32">
                             <field name="name" class="mb16"/>
-                            </h1>
+                        </h1>
                     </group>
+
                     <group>
                         <group>
+                            <field name="tag_ids" widget="many2many_tags"/>
                             <field name="postcode"/>
                             <field name="available_from"/>
-                            <field name="state"/>
+                            <field name="property_type_id" string="Property Type"/>
                         </group>
 
-                        <group> 
+                        <group>
                             <field name="expected_price"/>
                             <field name="selling_price"/>
+                            <field name="state"/>
                         </group>
                     </group>
+
                     <notebook>
                         <page string="Description">
                             <group>
@@ -36,7 +40,25 @@
                                 <field name="garden_orientation"/>
                             </group>
                         </page>
+
+                        <page string="Offers">
+                            <field name="offer_ids">
+                                <list>
+                                    <field name="price"/>
+                                    <field name="partner_id"/>
+                                    <field name="status"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Other Info">
+                            <group>
+                                <field name="buyer"/>
+                                <field name="salesman"/>
+                            </group>
+                        </page>
                     </notebook>
+
                 </sheet>
             </form>
         </field>
