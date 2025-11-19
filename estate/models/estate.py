@@ -25,8 +25,8 @@ class EstateProperty(models.Model):
         string="Orientation",
         selection=[
             ("north", "N"),
-            ("south", "S"), 
-            ("east", "E"), 
+            ("south", "S"),
+            ("east", "E"),
             ("west", "W"),
         ],
         help="Orientation of the garden",
