@@ -1,8 +1,6 @@
 {
     'name': "Real Estate",
-    'summary': """
-        Testing the real estate module
-    """,
+    'summary': "Testing the real estate module",
 
     'description': """
         Testing the description real estate module
@@ -14,7 +12,6 @@
         'views/estate_menus.xml'
     ],
     'application': True,
-    'installable': True,
     'author': "Odoo",
-    'license': 'AGPL-3'
+    'license': 'LGPL-3',
 }
