@@ -18,7 +18,9 @@
         <field name="arch" type="xml">
             <form string="Estate Property Form">
                 <header>
-                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                    <button name="action_mark_as_sold" type="object" string="SOLD"/>
+                    <button name="action_mark_as_cancelled" type="object" string="CANCEL"/>
+                    <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
                     <div>

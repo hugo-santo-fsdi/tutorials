@@ -31,6 +31,8 @@
                 <field name="validity"/>
                 <field name="deadline"/>
                 <field name="status"/>
+                <button name="action_accept_offer" string="Accept" type="object" icon="fa-check"/>
+                <button name="action_reject_offer" string="Reject" type="object" icon="fa-remove"/>
             </list>
         </field>
     </record>
