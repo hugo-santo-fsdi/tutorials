@@ -1,10 +1,15 @@
 from odoo import api, fields, models, _
-from odoo.exceptions import UserError
+from odoo.tools import float_compare
+from odoo.exceptions import UserError, ValidationError
 
 
 class EstatePropertyOffer(models.Model):
     _name = "estate.property.offer"
     _description = "Estate property offer"
+
+    _check_offer_price = models.Constraint(
+        'CHECK(price > 0)', 'Offer price must be strictly positive.'
+    )
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -51,6 +56,8 @@ class EstatePropertyOffer(models.Model):
             for offer in record.property_id.offer_ids:
                 if offer.status == "yes":
                     raise UserError(_("Already accepted an offer for this property."))
+            if float_compare(record.price, 0.9 * record.property_id.expected_price, 2) < 0:
+                raise ValidationError("Accepted offer price cannot be less than 90 percent of property price")
             record.status = "yes"
             record.property_id.buyer_id = record.partner_id
             record.property_id.selling_price = record.price
@@ -59,7 +66,13 @@ class EstatePropertyOffer(models.Model):
 
     def action_reject_offer(self):
         for record in self:
+            record.status = "no"
             record.property_id.buyer_id = None
             record.property_id.selling_price = 0
-            record.status = "no"
         return True
+
+    @api.constrains('price')
+    def _check_offered_price(self):
+        for record in self:
+            if float_compare(record.price, 0.9 * record.property_id.expected_price, 2) < 0:
+                raise ValidationError("Offer price cannot be less than 90 percent of property price")
