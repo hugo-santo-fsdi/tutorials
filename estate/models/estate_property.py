@@ -64,7 +64,7 @@ class EstateProperty(models.Model):
     )
 
     buyer_id = fields.Many2one(
-        'res.partner', string='Buyer', ondelete='restrict', copy=False, readonly=True
+        'res.partner', string='Buyer', ondelete='restrict', copy=False, readonly=True,
     )
 
     property_tags_ids = fields.Many2many("estate.property.tag", string="Tags")
@@ -81,9 +81,7 @@ class EstateProperty(models.Model):
     @api.depends("offer_ids")
     def _compute_best_offer(self):
         for record in self:
-            record.best_offer = 0
-            for offer in record.offer_ids:
-                record.best_offer = max(record.best_offer, offer.price)
+            record.best_offer = max(record.offer_ids.mapped('price'), default=0.0)
 
     @api.onchange("garden")
     def _onchange_garden(self):
@@ -104,7 +102,6 @@ class EstateProperty(models.Model):
             if record.state == "sold":
                 raise UserError(_("Sold properties cannot be cancelled."))
             record.state = "cancelled"
-            #TODO: Reject all offers
         return True
 
     @api.constrains('expected_price')
@@ -113,4 +110,3 @@ class EstateProperty(models.Model):
             for offer in record.offer_ids:
                 if offer.status == "yes" and float_compare(offer.price, 0.9 * record.expected_price, 2) < 0:
                     raise ValidationError("There is an accepted offer for an amount less than 90 percent of the new selling price, action required!")
-

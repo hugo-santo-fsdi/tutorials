@@ -26,7 +26,7 @@ class EstatePropertyOffer(models.Model):
     validity = fields.Integer(default=7)
     offer_creation_date = fields.Date(default=fields.Date.today())
     deadline = fields.Date(
-        "Offer Deadline", compute="_compute_deadline", inverse="_inverse_deadline"
+        "Offer Deadline", compute="_compute_deadline", inverse="_inverse_deadline",
     )
 
     partner_id = fields.Many2one(
@@ -65,10 +65,8 @@ class EstatePropertyOffer(models.Model):
         return True
 
     def action_reject_offer(self):
-        for record in self:
-            record.status = "no"
-            record.property_id.buyer_id = None
-            record.property_id.selling_price = 0
+        self.status = 'no'
+        self.property_id.write({'buyer_id': None, 'selling_price': 0})
         return True
 
     @api.constrains('price')

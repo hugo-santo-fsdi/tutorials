@@ -1,10 +1,7 @@
 {
     'name': "Real Estate",
     'summary': "Testing the real estate module",
-
-    'description': """
-        Testing the description real estate module
-    """,
+    'description': "Testing the description real estate module",
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
