@@ -24,10 +24,10 @@
                     <t t-name="card" handle="false">
                         <field name="name"/>
                         <field name="expected_price"/>
-                        <div t-if="record.state == 'offer_received'">
+                        <div t-if="record.state.raw_value == 'offer_received'">
                             <field name="best_offer"/>
                         </div>
-                        <div t-if="record.state == 'offer_accepted'">
+                        <div t-if="record.state.raw_value == 'offer_accepted'">
                             <field name="selling_price"/>
                         </div>
                         <field name="property_tags_ids"/>
