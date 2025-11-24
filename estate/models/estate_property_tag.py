@@ -9,7 +9,4 @@ class EstatePropertyTag(models.Model):
     name = fields.Char(required=True)
     color = fields.Integer()
 
-    _unique_tag = models.Constraint(
-        "unique(name)",
-        "This tag already exists"
-    )
+    _unique_tag = models.Constraint("unique(name)", "This tag already exists")

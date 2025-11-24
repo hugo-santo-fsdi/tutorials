@@ -59,13 +59,11 @@ class EstateProperty(models.Model):
     best_price = fields.Float(compute="_compute_best_price")
 
     _postive_expected_price = models.Constraint(
-        "CHECK (expected_price > 0)",
-        "The expected price must be strictly positive"
+        "CHECK (expected_price > 0)", "The expected price must be strictly positive"
     )
 
     _postive_selling_price = models.Constraint(
-        "CHECK (selling_price > 0)",
-        "The selling price must be strictly positive"
+        "CHECK (selling_price > 0)", "The selling price must be strictly positive"
     )
 
     @api.depends("living_area", "garden_area")
@@ -76,7 +74,7 @@ class EstateProperty(models.Model):
     @api.depends("offer_ids.price")
     def _compute_best_price(self):
         for property in self:
-            property.best_price = max(property.offer_ids.mapped('price'), default=0.0)
+            property.best_price = max(property.offer_ids.mapped("price"), default=0.0)
 
     @api.onchange("offer_ids")
     def _onchange_offer_receieved(self):
@@ -87,10 +85,10 @@ class EstateProperty(models.Model):
     def _onchange_garden(self):
         if self.garden:
             self.garden_area = 10
-            self.garden_orientation = 'north'
+            self.garden_orientation = "north"
         else:
             self.garden_area = 0
-            self.garden_orientation = ''
+            self.garden_orientation = ""
 
     def sell_property(self):
         for property in self:
@@ -106,15 +104,22 @@ class EstateProperty(models.Model):
             else:
                 property.state = "cancelled"
         return True
- 
+
     @api.constrains("selling_price")
     def _check_selling_price(self):
         for property in self:
-            if float_compare(property.selling_price, 0.9 * property.expected_price, 2) == -1:
-                raise exceptions.ValidationError("The selling price must be at least 90% of the expected price.")
-            
+            if (
+                float_compare(property.selling_price, 0.9 * property.expected_price, 2)
+                == -1
+            ):
+                raise exceptions.ValidationError(
+                    "The selling price must be at least 90% of the expected price."
+                )
+
     @api.ondelete(at_uninstall=False)
     def _unlink_property_with_offer(self):
         for property in self:
             if property.state not in ["new", "cancelled"]:
-                raise exceptions.UserError("You cannot delete a property with existing offers!")
+                raise exceptions.UserError(
+                    "You cannot delete a property with existing offers!"
+                )
