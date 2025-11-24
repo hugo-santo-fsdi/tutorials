@@ -6,6 +6,7 @@ from odoo.exceptions import UserError, ValidationError
 class EstateProperty(models.Model):
     _name = "estate.property"
     _description = "Estate property model"
+    _order = "id desc"
 
     _check_expected_price = models.Constraint(
         'CHECK(expected_price > 0)',
@@ -95,6 +96,7 @@ class EstateProperty(models.Model):
             if record.state == "cancelled":
                 raise UserError(_("Canceled properties cannot be sold."))
             record.state = "sold"
+            record.active = False
         return True
 
     def action_mark_as_cancelled(self):
@@ -102,6 +104,7 @@ class EstateProperty(models.Model):
             if record.state == "sold":
                 raise UserError(_("Sold properties cannot be cancelled."))
             record.state = "cancelled"
+            record.active = False
         return True
 
     @api.constrains('expected_price')

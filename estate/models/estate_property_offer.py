@@ -6,6 +6,7 @@ from odoo.exceptions import UserError, ValidationError
 class EstatePropertyOffer(models.Model):
     _name = "estate.property.offer"
     _description = "Estate property offer"
+    _order = "price desc"
 
     _check_offer_price = models.Constraint(
         'CHECK(price > 0)', 'Offer price must be strictly positive.'
@@ -37,7 +38,10 @@ class EstatePropertyOffer(models.Model):
         required=True,
     )
     property_id = fields.Many2one(
-        'estate.property', string='Property', ondelete='restrict', required=True
+        'estate.property', string='Property', ondelete='restrict', required=True,
+    )
+    property_type_id = fields.Many2one(
+        related='property_id.property_type_id', string='Property Type', store=True,
     )
 
     @api.depends("validity", "offer_creation_date")
