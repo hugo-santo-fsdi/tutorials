@@ -18,6 +18,7 @@ class EstatePropertyOffer(models.Model):
         for record in records:
             if record.property_id.state == "new":
                 record.property_id.state = "offer_received"
+        ## Another way is to leave the super.create() at the end of the function and browse for the property by id
         return records
 
     price = fields.Float("Expected Price")
@@ -38,7 +39,7 @@ class EstatePropertyOffer(models.Model):
         required=True,
     )
     property_id = fields.Many2one(
-        'estate.property', string='Property', ondelete='restrict', required=True,
+        'estate.property', string='Property', ondelete='cascade', required=True,
     )
     property_type_id = fields.Many2one(
         related='property_id.property_type_id', string='Property Type', store=True,
@@ -78,3 +79,5 @@ class EstatePropertyOffer(models.Model):
         for record in self:
             if float_compare(record.price, 0.9 * record.property_id.expected_price, 2) < 0:
                 raise ValidationError("Offer price cannot be less than 90 percent of property price")
+            if float_compare(record.price, record.property_id.best_offer, 2) < 0:
+                raise ValidationError(_("The offer must be higher than %s", str(record.property_id.best_offer)))
