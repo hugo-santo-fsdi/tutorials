@@ -69,6 +69,7 @@ class EstateProperty(models.Model):
     )
 
     property_tags_ids = fields.Many2many("estate.property.tag", string="Tags")
+    color = fields.Integer('Color Index', default=7)
 
     offer_ids = fields.One2many("estate.property.offer", "property_id", string="Offers")
     total_area = fields.Float(compute="_compute_total_area")
