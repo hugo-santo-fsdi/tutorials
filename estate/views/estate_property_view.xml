@@ -46,7 +46,6 @@
                     <button name="action_mark_as_sold" type="object" string="SOLD" invisible="not active"/>
                     <button name="action_mark_as_cancelled" type="object" string="CANCEL" invisible="not active"/>
                     <field name="state" widget="statusbar"/>
-                    <field name="active" invisible="True"/>
                 </header>
                 <sheet>
                     <div>
