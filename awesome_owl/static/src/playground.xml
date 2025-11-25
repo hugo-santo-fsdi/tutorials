@@ -3,12 +3,13 @@
     <t t-name="awesome_owl.playground">
         Hello My Friend
         <div>
-            <Counter />
-            <Counter />
+            <Counter callback.bind="incrementSum" />
+            <Counter callback.bind="incrementSum" />
         </div>
         <div>
-            <Card title="'Task 1'" content="'prepare things'"/>
-            <Card title="'Task 2'" content="'do stuff'"/>
+            <Card title="'Task 1'" content="no_markup_value"/>
+            <Card title="'Task 2'" content="markup_value"/>
         </div>
+        <p>Sum: <t t-esc="state.sum"/></p>
    </t>
 </templates>
