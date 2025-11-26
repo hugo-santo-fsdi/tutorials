@@ -7,9 +7,13 @@
             <Counter callback.bind="incrementSum" />
         </div>
         <div>
-            <Card title="'Task 1'" content="no_markup_value"/>
-            <Card title="'Task 2'" content="markup_value"/>
+            <Card title="'Task 1'"/>
+            <Card title="'Task 2'">
+                <Counter callback.bind="incrementSum" />
+            </Card>
         </div>
         <p>Sum: <t t-esc="state.sum"/></p>
+
+        <TodoList/>
    </t>
 </templates>

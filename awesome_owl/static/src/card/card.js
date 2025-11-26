@@ -1,4 +1,4 @@
-import { Component, useState } from "@odoo/owl";
+import { Component, useState, Slot } from "@odoo/owl";
 
 
 export class Card extends Component {
@@ -6,6 +6,13 @@ export class Card extends Component {
 
     static props = {
         title: {type: String},
-        content: {type: String}
+        slots : { type: Object, optional: true },
+    }
+    setup(){
+        this.state = useState({ show: false });
+    }
+
+    toggleShow(){
+        this.state.show = !this.state.show;
     }
 }
