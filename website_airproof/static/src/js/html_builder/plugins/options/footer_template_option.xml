@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
+    <!-- Add the footer template to the related option -->
     <t t-name="website_airproof.FooterTemplateOption" t-inherit="website.FooterTemplateOption" t-inherit-mode="extension">
         <xpath expr="//BuilderSelect[@action=&quot;'websiteConfigFooter'&quot;]" position="inside">
             <BuilderSelectItem title.translate="Aiproof"
