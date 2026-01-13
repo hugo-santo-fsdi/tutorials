@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
-   <record id="website.default_website" model="website">
-      <field name="name">Airproof</field>
-      <field name="logo" type="base64" file="website_airproof/static/src/img/content/branding/airproof-logo.svg"/>
-      <field name="favicon" type="base64" file="website_airproof/static/description/airproof-favicon.png" />
-      <field name="shop_ppr">3</field>
-   </record>
+<odoo>
+    <record id="website.default_website" model="website">
+        <field name="name">Airproof</field>
+        <field name="logo" type="base64" file="website_airproof/static/src/img/content/branding/airproof-logo.svg"/>
+        <field name="favicon" type="base64" file="website_airproof/static/description/airproof-favicon.png" />
+        <field name="shop_ppr">3</field>
+        <field name="shop_opt_products_design_classes">
+            o_wsale_products_opt_layout_catalog
+            o_wsale_products_opt_design_thumbs
+            o_wsale_products_opt_name_color_regular
+            o_wsale_products_opt_thumb_cover
+            o_wsale_products_opt_img_secondary_show
+            o_wsale_products_opt_img_hover_zoom_out_light
+            o_wsale_products_opt_has_cta
+            o_wsale_products_opt_actions_onhover
+            o_wsale_products_opt_wishlist_fixed
+            o_wsale_products_opt_cc1
+            o_wsale_products_opt_rounded_2
+            o_wsale_products_opt_has_comparison
+            o_wsale_products_opt_actions_promote
+        </field>
+    </record>
 </odoo>

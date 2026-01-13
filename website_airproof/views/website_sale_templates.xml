@@ -39,9 +39,10 @@
     </template>
 
     <!-- Disable Search in shop & product page -->
-    <template id="search" inherit_id="website_sale.search" name="Airproof - Search">
+    <!-- As there is an option to remove the search bar, do not replace it this ways. -->
+    <!-- <template id="search" inherit_id="website_sale.search" name="Airproof - Search">
         <xpath expr="//t[@t-call='website.website_search_box_input']" position="replace" />
-    </template>
+    </template> -->
 
     <!-- Add link on product card -->
     <template id="products_item" inherit_id="website_sale.products_item" name="Airproof - Products item">
@@ -85,38 +86,6 @@
         </xpath>
         <xpath expr="//div[@id='product_option_block']" position="attributes">
             <attribute name="t-attf-class" remove="w-100 w-sm-auto" separator=" "/>
-        </xpath>
-    </template>
-
-    <!-- Add product specifications in accordion -->
-    <template id="product_accordion" inherit_id="website_sale.product_accordion" name="Airproof - Product specifications">
-        <xpath expr="//div[@id='product_accordion']" position="inside">
-            <div class="accordion-item">
-            <div t-if="product.valid_product_template_attribute_line_ids._prepare_single_value_for_display()" class="accordion-header my-0 h6">
-                <button class="accordion-button collapsed fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#specifications" aria-expanded="false" aria-controls="specifications">
-                    Specifications
-                </button>
-            </div>
-            <div id="specifications" class="accordion-collapse collapse" data-bs-parent="#product_accordion">
-                <div class="accordion-body pt-0">
-                    <div t-if="not is_view_active('website_sale_comparison.accordion_specs_item')" id="product_attributes_simple" >
-                        <t t-set="single_value_attributes" t-value="product.valid_product_template_attribute_line_ids._prepare_single_value_for_display()"/>
-                        <table t-attf-class="table table-sm text-muted {{'' if single_value_attributes else 'd-none'}}">
-                            <t t-foreach="single_value_attributes" t-as="attribute">
-                                <tr>
-                                    <td class="border-0">
-                                        <span t-field="attribute.name"/>:
-                                        <t t-foreach="single_value_attributes[attribute]" t-as="ptal">
-                                            <span t-field="ptal.product_template_value_ids._only_active().name"/><t t-if="not ptal_last">, </t>
-                                        </t>
-                                    </td>
-                                </tr>
-                            </t>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            </div>
         </xpath>
     </template>
 

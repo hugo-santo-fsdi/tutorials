@@ -46,9 +46,9 @@
 
 <!-- SHOP PAGE -->
     <!-- Disable Wishlist on shop // View template in: odoo/addons/website_sale_whishlist/views/website_sale_whishlist_template.xml -->
-    <record id="website_sale_wishlist.add_to_wishlist" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record>
+    <!-- <record id="website_sale_wishlist.add_to_wishlist" model="ir.ui.view">
+        <field name="active" eval="True"/>
+    </record> -->
     <!-- Enable product categories in the left // View template in: odoo/addons/website_sale/views/templates.xml -->
     <record id="website_sale.products_categories" model="ir.ui.view">
         <field name="active" eval="True"/>
@@ -77,6 +77,10 @@
     <!-- <record id="website_sale.products_design_card" model="ir.ui.view">
         <field name="active" eval="True"/>
     </record> -->
+    <!-- Disable Search bar on the /shop page // // View template in: odoo/addons/website_sale/views/template.xml -->
+     <record id="website_sale.search" model="ir.ui.view">
+        <field name="active" eval="False"/>
+     </record>
 
 <!-- PRODUCT PAGE -->
     <!-- Enable Wishlist on product // View template in: odoo/addons/website_sale_whishlist/views/website_sale_whishlist_template.xml  -->
@@ -97,6 +101,13 @@
     </record> -->
     <!-- Enable More information -->
     <record id="website_sale.accordion_more_information" model="ir.ui.view">
+        <field name="active" eval="True"/>
+    </record>
+
+    <record id="website_sale_comparison.product_attributes_body" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website_sale_comparison.accordion_specs_item" model="ir.ui.view">
         <field name="active" eval="True"/>
     </record>
 </odoo>
