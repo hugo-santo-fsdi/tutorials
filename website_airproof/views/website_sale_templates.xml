@@ -22,7 +22,11 @@
             </section>
         </xpath>
         <xpath expr="//div[hasclass('products_header')]" position="attributes">
-            <attribute name="class" add="justify-content-end" remove="justify-content-between" separator=" "/>
+            <attribute name="class" add="justify-content-end " remove="justify-content-between" separator=" "/>
+        </xpath>
+        <!-- Force the display of eCommerce Category title everywhere -->
+        <xpath expr="//*[@id='o_wsale_products_header']" position="attributes">
+            <attribute name="t-attf-class" add="o_wsale_products_header_show_category_title" separator=" "/>
         </xpath>
         <!-- Breadcrumb -->
         <xpath expr="//t[@t-call='website_sale.products_breadcrumb']/t" position="attributes">
@@ -43,15 +47,6 @@
     <!-- <template id="search" inherit_id="website_sale.search" name="Airproof - Search">
         <xpath expr="//t[@t-call='website.website_search_box_input']" position="replace" />
     </template> -->
-
-    <!-- Add link on product card -->
-    <template id="products_item" inherit_id="website_sale.products_item" name="Airproof - Products item">
-        <xpath expr="//div[hasclass('o_wsale_product_information')]" position="inside" >
-            <span class="small text-dark pt-3 pb-1" >Discover more
-                <img src="/web/image/website_airproof.img_arrow_small" alt="" class="ms-2"/>
-            </span>
-        </xpath>
-    </template>
 
 <!-- PRODUCT PAGE -->
     <template id="product" inherit_id="website_sale.product" name="Airproof - Product">

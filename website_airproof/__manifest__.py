@@ -2,7 +2,7 @@
     'name': 'Airproof Theme',
     'description': 'Airproof Theme - Drones, modelling, camera',
     'category': 'Website/Theme',
-    'version': '19.0.1.0',
+    'version': '19.0.1.1',
     'author': 'PSBE Designers',
     'license': 'LGPL-3',
     'depends': ['website_sale', 'website_sale_wishlist', 'website_blog', 'website_mass_mailing'],
@@ -23,6 +23,7 @@
         # Frontend
         #'views/new_page_template_templates.xml',
         'views/website_templates.xml',
+        'views/product_tile_templates.xml',
         'views/website_sale_templates.xml',
         'views/website_sale_wishlist_templates.xml',
         # Images

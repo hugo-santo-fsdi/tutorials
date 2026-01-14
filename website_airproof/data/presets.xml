@@ -69,18 +69,10 @@
     <record id="website_sale.products_attributes" model="ir.ui.view">
         <field name="active" eval="True"/>
     </record>
-    <!-- Disable Grid or list option -->
-    <!-- <record id="website_sale.add_grid_or_list_option" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record> -->
-    <!-- Enable Style card for products design -->
-    <!-- <record id="website_sale.products_design_card" model="ir.ui.view">
-        <field name="active" eval="True"/>
-    </record> -->
     <!-- Disable Search bar on the /shop page // // View template in: odoo/addons/website_sale/views/template.xml -->
-     <record id="website_sale.search" model="ir.ui.view">
+    <record id="website_sale.search" model="ir.ui.view">
         <field name="active" eval="False"/>
-     </record>
+    </record>
 
 <!-- PRODUCT PAGE -->
     <!-- Enable Wishlist on product // View template in: odoo/addons/website_sale_whishlist/views/website_sale_whishlist_template.xml  -->
@@ -92,13 +84,9 @@
         <field name="active" eval="False"/>
     </record>
     <!-- Disable Terms and conditions -->
-    <!-- <record id="website_sale.product_custom_text" model="ir.ui.view">
+    <record id="website_sale.product_terms_and_conditions" model="ir.ui.view">
         <field name="active" eval="False"/>
-    </record> -->
-    <!-- Disable Share buttons -->
-    <!-- <record id="website_sale.product_share_buttons" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record> -->
+    </record>
     <!-- Enable More information -->
     <record id="website_sale.accordion_more_information" model="ir.ui.view">
         <field name="active" eval="True"/>

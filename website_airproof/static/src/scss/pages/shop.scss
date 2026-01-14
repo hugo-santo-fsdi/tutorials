@@ -1,4 +1,5 @@
 #wrapwrap {
+    .products_header { font-size: 1rem; }
     // Breadcrumb
     .breadcrumb-item + .breadcrumb-item::before { font-family: "FontAwesome" !important; }
     // Sort by button
@@ -25,5 +26,5 @@
         background-color: o-color('o-color-3');
         .img-fluid { mix-blend-mode: multiply; }
     }
-    .oe_website_sale .o_wsale_design_cards { --o-wsale-card-info-padding: 1.5rem; }
+    .oe_website_sale .o_wsale_products_opt_design_cards { --o-wsale-card-info-padding: 1.5rem; }
 }

@@ -5,9 +5,10 @@
         <field name="logo" type="base64" file="website_airproof/static/src/img/content/branding/airproof-logo.svg"/>
         <field name="favicon" type="base64" file="website_airproof/static/description/airproof-favicon.png" />
         <field name="shop_ppr">3</field>
+        <field name="shop_gap">16px</field>
         <field name="shop_opt_products_design_classes">
             o_wsale_products_opt_layout_catalog
-            o_wsale_products_opt_design_thumbs
+            o_wsale_products_opt_design_cards
             o_wsale_products_opt_name_color_regular
             o_wsale_products_opt_thumb_cover
             o_wsale_products_opt_img_secondary_show
@@ -19,6 +20,8 @@
             o_wsale_products_opt_rounded_2
             o_wsale_products_opt_has_comparison
             o_wsale_products_opt_actions_promote
+            o_wsale_products_opt_has_wishlist
+            o_wsale_products_opt_actions_subtle
         </field>
     </record>
 </odoo>
