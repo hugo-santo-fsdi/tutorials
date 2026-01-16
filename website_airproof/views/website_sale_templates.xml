@@ -37,16 +37,10 @@
             <xpath expr="//t[@t-call='website_sale.products_breadcrumb']" position="move"/>
         </xpath>
         <!-- Button sort by -->
-        <xpath expr="//t[@t-call='website_sale.sort']" position="inside">
-            <t t-set="_classes" t-valuef="rounded px-3 py-1"/>
+        <xpath expr="//t[@t-call='website_sale.sort']" position="attributes">
+            <attribute name="_classes.f" add="rounded px-3 py-1" separator=" "/>
         </xpath>
     </template>
-
-    <!-- Disable Search in shop & product page -->
-    <!-- As there is an option to remove the search bar, do not replace it this ways. -->
-    <!-- <template id="search" inherit_id="website_sale.search" name="Airproof - Search">
-        <xpath expr="//t[@t-call='website.website_search_box_input']" position="replace" />
-    </template> -->
 
 <!-- PRODUCT PAGE -->
     <template id="product" inherit_id="website_sale.product" name="Airproof - Product">
@@ -60,8 +54,6 @@
         <xpath expr="//section[@id='product_detail']/div/div[2]" position="attributes">
             <attribute name="class" add="col-lg-2" remove="col-lg-4" separator=" "/>
         </xpath>
-
-
         <!-- Delete product specifications to move in accordion -->
         <!-- <xpath expr="//div[@id='product_attributes_simple']" position="replace"/> -->
         <!-- Add drop zone on all products -->
