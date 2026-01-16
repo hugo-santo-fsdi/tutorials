@@ -21,7 +21,7 @@
         'data/pages/home.xml',
         'data/pages/contact.xml',
         # Frontend
-        #'views/new_page_template_templates.xml',
+        'views/new_page_template_templates.xml',
         'views/website_templates.xml',
         'views/product_tile_templates.xml',
         'views/website_sale_templates.xml',
@@ -63,9 +63,9 @@
             'website_airproof/static/src/js/html_editor/main/font/color_picker_gradient_tab.js',
         ],
     },
-    # 'new_page_templates': {
-    #     'airproof': {
-    #         'services': ['s_parallax', 's_airproof_key_benefits_h2', 's_call_to_action', 's_airproof_carousel']
-    #     }
-    # },
+    'new_page_templates': {
+        'airproof': {
+            'services': ['s_parallax', 's_airproof_key_benefits_h2', 's_call_to_action', 's_airproof_carousel']
+        }
+    },
 }
