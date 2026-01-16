@@ -45,10 +45,6 @@
     </record>
 
 <!-- SHOP PAGE -->
-    <!-- Disable Wishlist on shop // View template in: odoo/addons/website_sale_whishlist/views/website_sale_whishlist_template.xml -->
-    <!-- <record id="website_sale_wishlist.add_to_wishlist" model="ir.ui.view">
-        <field name="active" eval="True"/>
-    </record> -->
     <!-- Enable product categories in the left // View template in: odoo/addons/website_sale/views/templates.xml -->
     <record id="website_sale.products_categories" model="ir.ui.view">
         <field name="active" eval="True"/>
@@ -79,6 +75,10 @@
     <record id="website_sale_wishlist.product_add_to_wishlist" model="ir.ui.view">
         <field name="active" eval="True"/>
     </record>
+    <!-- Disable "Compare" button -->
+    <record id="website_sale_comparison.product_add_to_compare" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
     <!-- Disable Quantity -->
     <record id="website_sale.product_quantity" model="ir.ui.view">
         <field name="active" eval="False"/>
@@ -91,10 +91,11 @@
     <record id="website_sale.accordion_more_information" model="ir.ui.view">
         <field name="active" eval="True"/>
     </record>
-
+    <!-- Disable Specifications table at the bottom of the page -->
     <record id="website_sale_comparison.product_attributes_body" model="ir.ui.view">
         <field name="active" eval="False"/>
     </record>
+    <!-- Enable Specifications table in the accordion -->
     <record id="website_sale_comparison.accordion_specs_item" model="ir.ui.view">
         <field name="active" eval="True"/>
     </record>

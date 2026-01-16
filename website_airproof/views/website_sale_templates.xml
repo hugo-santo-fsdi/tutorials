@@ -54,8 +54,6 @@
         <xpath expr="//section[@id='product_detail']/div/div[2]" position="attributes">
             <attribute name="class" add="col-lg-2" remove="col-lg-4" separator=" "/>
         </xpath>
-        <!-- Delete product specifications to move in accordion -->
-        <!-- <xpath expr="//div[@id='product_attributes_simple']" position="replace"/> -->
         <!-- Add drop zone on all products -->
         <!-- <xpath expr="//section[@id='product_detail']" position="after">
             <div id="oe_structure_layout_airproof_products" class="oe_structure oe_empty" data-editor-message="DROP ZONE VISIBLE ACROSS ALL PRODUCTS"/>
@@ -63,13 +61,9 @@
     </template>
 
     <template id="cta_wrapper" inherit_id="website_sale.cta_wrapper" name="Airproof - CTA Wrapper">
-        <!-- Adapt "Add to wishlist" button -->
-        <!-- <xpath expr="//div[@id='add_to_cart_wrap']" position="attributes">
-            <attribute name="t-attf-class" add="my-2 me-4" remove="mb-2 me-auto" separator=" "/>
-        </xpath> -->
         <!-- Change icon "add to cart" -->
         <xpath expr="//*[@id='add_to_cart']/i[hasclass('fa-shopping-cart')]" position="replace">
-            <img src="/web/image/website_airproof.img_shopping" alt="Shopping icon" class="img img-fluid me-1"/> Add to cart
+            <img src="/web/image/website_airproof.img_shopping" alt="Shopping icon" class="img img-fluid me-1"/> <span class="text-uppercase fw-bold">Add to cart</span>
         </xpath>
         <xpath expr="//div[@id='product_option_block']" position="attributes">
             <attribute name="t-attf-class" remove="w-100 w-sm-auto" separator=" "/>
@@ -89,18 +83,24 @@
     <!-- Alternative products in product page -->
     <template id="alternative_products" inherit_id="website_sale.alternative_products" name="Airproof - Alternative products">
         <!-- Title -->
-        <xpath expr="//div[@id='oe_structure_website_sale_recommended_products']" position="before">
-            <section class="s_title pt64 pb64 o_colored_level" data-vcss="001" data-snippet="s_title" data-name="Title" style="background-color: #E6E7E8;" t-if="product.alternative_product_ids">
-                <div class="container s_allow_columns">
-                    <h2 class="text-center fw-bold">You might also like</h2>
-                </div>
-            </section>
+        <xpath expr="//div[@id='oe_structure_website_sale_recommended_products']//*[hasclass('s_dynamic_snippet_title')]" position="attributes">
+            <attribute name="class" remove="d-flex flex-column flex-md-row justify-content-between" add="pt48 pb64" separator=" "/>
+            <attribute name="style">style="background-color: #E6E7E8;"</attribute>
+        </xpath>
+        <xpath expr="//div[@id='oe_structure_website_sale_recommended_products']//*[hasclass('s_dynamic_snippet_title')]//h4/following-sibling::*[hasclass('lead')]" position="replace"/>
+        <xpath expr="//div[@id='oe_structure_website_sale_recommended_products']//*[hasclass('s_dynamic_snippet_title')]//h4" position="replace">
+            <h2 class="text-center fw-bold">You might also like</h2>
         </xpath>
         <!-- Change template -->
         <xpath expr="//section[@data-snippet='s_dynamic_snippet_products']" position="attributes">
             <attribute name="class" add="s_product_product_airproof" remove="s_product_product_borderless_1" separator=" "/>
-            <attribute name="data-template-key" remove="website_sale.dynamic_filter_template_product_product_borderless_1" add="website_airproof.dynamic_filter_template_product_product_airproof" separator=" "/>
+            <attribute name="data-template-key">website_airproof.dynamic_filter_template_product_product_airproof</attribute>
             <attribute name="style" add="background-color: #E6E7E8;" separator=" "/>
+        </xpath>
+
+        <!-- Move the drop-zone before the alternative products -->
+        <xpath expr="//div[@t-field='product.website_description']" position="before">
+            <xpath expr="//div[@id='oe_structure_website_sale_product_2']" position="move"/>
         </xpath>
     </template>
 </odoo>

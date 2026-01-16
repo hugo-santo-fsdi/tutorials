@@ -6,4 +6,13 @@
             <attribute name="class" add="fa-heart-o" remove="fa-heart" separator=" "/>
         </xpath>
     </template>
+<!-- Adapt "Add to wishlist" button -->
+    <template id="product_add_to_wishlist" inherit_id="website_sale_wishlist.product_add_to_wishlist" name="Airproof - Wishlist Button">
+        <xpath expr="//t[contains(@t-valuef, 'o_add_wishlist_dyn')]" position="attributes">
+            <attribute name="t-valuef" remove="btn-outline-primary" add="btn-link" separator=" "/>
+        </xpath>
+        <xpath expr="//i[hasclass('fa-heart-o')]" position="attributes">
+            <attribute name="class" add="me-1" remove="me-2 me-lg-0" separator=" "/>
+        </xpath>
+    </template>
 </odoo>

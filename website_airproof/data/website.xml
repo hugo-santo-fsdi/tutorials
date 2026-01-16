@@ -18,9 +18,7 @@
             o_wsale_products_opt_wishlist_fixed
             o_wsale_products_opt_cc1
             o_wsale_products_opt_rounded_2
-            o_wsale_products_opt_has_comparison
             o_wsale_products_opt_actions_promote
-            o_wsale_products_opt_has_wishlist
             o_wsale_products_opt_actions_subtle
         </field>
     </record>
