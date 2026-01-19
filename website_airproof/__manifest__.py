@@ -38,7 +38,7 @@
         ],
         'web.assets_frontend': [
             # SCSS
-            'website_airproof/static/src/scss/font.scss',
+            'website_airproof/static/src/scss/base/font.scss',
             'website_airproof/static/src/scss/components/mouse_follower.scss',
             'website_airproof/static/src/scss/components/product_card.scss',
             'website_airproof/static/src/scss/layout/header.scss',
