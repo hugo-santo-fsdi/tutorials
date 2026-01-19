@@ -1,13 +1,13 @@
-import { Plugin } from "@html_editor/plugin";
-import { registry } from "@web/core/registry";
-import { BuilderAction } from "@html_builder/core/builder_action";
+import {Plugin} from "@html_editor/plugin";
+import {registry} from "@web/core/registry";
+import {BuilderAction} from "@html_builder/core/builder_action";
 
 class CarouselBubbleOptionPlugin extends Plugin {
     static id = "carouselBubbleOption";
     resources = {
         // Declare the template and the selector
         builder_options: [
-           {
+            {
                 template: "website_airproof.CarouselBubbleOption",
                 selector: ".x_bubble_item",
             },
@@ -15,7 +15,7 @@ class CarouselBubbleOptionPlugin extends Plugin {
         // Declare your custom methods related to the options.
         builder_actions: {
             SetBubbleMarginAction,
-        }
+        },
     };
 }
 
@@ -42,10 +42,10 @@ export class SetBubbleMarginAction extends BuilderAction {
         return 0;
     }
 
-    apply({ editingElement, value }) {
+    apply({editingElement, value}) {
         // Browse all editing elements looking for "mb-" class
         // Then remove the "mb-" class to avoid duplicated classes
-        editingElement.classList.forEach(classSelector => {
+        editingElement.classList.forEach((classSelector) => {
             if (classSelector.startsWith("mb-")) {
                 editingElement.classList.remove(classSelector);
             }

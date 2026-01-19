@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
     <!-- Add the header template to the related option -->
     <t t-name="website_airproof.headerTemplateOption" t-inherit="website.HeaderTemplateOption" t-inherit-mode="extension">
         <xpath expr="//BuilderSelect[@action=&quot;'reloadComposite'&quot;]" position="inside">
-            <BuilderSelectItem title.translate="Airproof"
+            <BuilderSelectItem
+                title.translate="Airproof"
                 actionParam="[
                         {
                             action: 'websiteConfig',
@@ -13,9 +14,8 @@
                                 checkVars: false,
                             },
                         },
-                    ]"
-            >
-                <Img src="'/website_airproof/static/src/img/wbuilder/template-header-opt.svg'" class="'mw-100'"/>
+                    ]">
+                <Img src="'/website_airproof/static/src/img/wbuilder/template-header-opt.svg'" class="'mw-100'" />
             </BuilderSelectItem>
         </xpath>
     </t>

@@ -24,6 +24,7 @@
         background-color: o-color('o-color-1') !important;
         color: o-color('black') !important;
     }
+
     // Centre logo
     @include media-breakpoint-up(lg) {
         header .o_header_centered_logo { width: 50%; }

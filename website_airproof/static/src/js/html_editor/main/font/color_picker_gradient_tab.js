@@ -1,5 +1,5 @@
-import { ColorPickerGradientTab } from "@html_editor/main/font/color_picker_gradient_tab";
-import { registry } from "@web/core/registry";
+import {ColorPickerGradientTab} from "@html_editor/main/font/color_picker_gradient_tab";
+import {registry} from "@web/core/registry";
 
 // Add your gradient to the default list
 export class AirproofColorPickerGradientTab extends ColorPickerGradientTab {

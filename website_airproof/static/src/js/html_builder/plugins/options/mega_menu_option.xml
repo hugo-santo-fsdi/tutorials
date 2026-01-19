@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
     <t t-name="website_airproof.MegaMenuOption" t-inherit="website.MegaMenuOption" t-inherit-mode="extension">
         <xpath expr="//BuilderSelect[@id=&quot;'mega_menu_template_opt'&quot;]" position="inside">
@@ -8,7 +8,7 @@
                     view: `website_airproof.s_mega_menu_airproof`,
                     templateClass: 's_mega_menu_airproof',
                 }">
-                <Img class="'w-75 mx-auto my-3'" src="'/website_airproof/static/src/img/wbuilder/template-header-opt.svg'"/>
+                <Img class="'w-75 mx-auto my-3'" src="'/website_airproof/static/src/img/wbuilder/template-header-opt.svg'" />
             </BuilderSelectItem>
         </xpath>
     </t>

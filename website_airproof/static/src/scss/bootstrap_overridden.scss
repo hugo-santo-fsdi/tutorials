@@ -13,7 +13,6 @@ $display-font-sizes: (
   5: 3rem,
   6: 2.5rem
 ) !default;
-
 $headings-font-weight: 700 !default;
 $font-weight-normal: 400 !default;
 
@@ -37,4 +36,4 @@ $navbar-padding-y: 1.4rem !default;
 $navbar-nav-link-padding-x: 1rem !default;
 
 // Breadcrumb
-$breadcrumb-divider: quote("\f105") !default;
+$breadcrumb-divider: "\f105" !default;
