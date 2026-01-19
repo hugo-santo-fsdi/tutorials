@@ -44,15 +44,9 @@
 
 <!-- PRODUCT PAGE -->
     <template id="product" inherit_id="website_sale.product" name="Airproof - Product">
-        <!-- Move breadcrumb -->
-        <xpath expr="//section[@id='product_detail']/div" position="attributes">
-            <attribute name="class" add="justify-content-end" separator=" "/>
-        </xpath>
-        <xpath expr="//section[@id='product_detail']/div/div[1]" position="attributes">
-            <attribute name="class" add="col-lg-4" remove="col order-1 order-lg-0" separator=" "/>
-        </xpath>
-        <xpath expr="//section[@id='product_detail']/div/div[2]" position="attributes">
-            <attribute name="class" add="col-lg-2" remove="col-lg-4" separator=" "/>
+        <!-- Configure options of the product page -->
+        <xpath expr="//section[@id='product_detail']" position="attributes">
+            <attribute name="class" add="o_wsale_product_page_opt_image_radius_medium" separator=" "/>
         </xpath>
         <!-- Add drop zone on all products -->
         <!-- <xpath expr="//section[@id='product_detail']" position="after">
@@ -72,11 +66,15 @@
 
     <!-- Product - Img carousel indicators -->
     <template id="carousel_product_indicators" inherit_id="website_sale.carousel_product_indicators" name="Airproof - Carousel product indicators">
+        <!-- Center the indicators only for the "Bottom" display -->
         <xpath expr="//ol" position="attributes">
-            <attribute name="t-att-class" add="' justify-content-center p-3'" separator=" + "/>
+            <attribute name="t-attf-class" add="justify-content-center p-3" separator=" "/>
         </xpath>
-        <xpath expr="//li" position="attributes">
-            <attribute name="t-attf-class" add="border-0 rounded" separator=" "/>
+    </template>
+
+    <template id="carousel_product_indicators_bottom" inherit_id="website_sale.carousel_product_indicators_bottom" name="Airproof - Carousel Product Indicators Bottom">
+        <xpath expr="//t[@t-set='indicators_div_class']" position="attributes">
+            <attribute name="t-value" add="'justify-content-center p-3'" separator=" + "/>
         </xpath>
     </template>
 
@@ -93,9 +91,9 @@
         </xpath>
         <!-- Change template -->
         <xpath expr="//section[@data-snippet='s_dynamic_snippet_products']" position="attributes">
-            <attribute name="class" add="s_product_product_airproof" remove="s_product_product_borderless_1" separator=" "/>
+            <attribute name="class" remove="s_product_product_borderless_1" add="s_product_product_airproof o_wsale_products_opt_layout_catalog o_wsale_products_opt_design_cards o_wsale_products_opt_name_color_regular o_wsale_products_opt_thumb_cover o_wsale_products_opt_img_hover_zoom_out_light o_wsale_products_opt_has_cta o_wsale_products_opt_actions_onhover o_wsale_products_opt_wishlist_fixed .o_wsale_products_opt_cc o_wsale_products_opt_cc1 o_wsale_products_opt_rounded_2 o_wsale_products_opt_actions_promote o_wsale_products_opt_actions_subtle o_wsale_products_opt_name_weight_bold" separator=" "/>
             <attribute name="data-template-key">website_airproof.dynamic_filter_template_product_product_airproof</attribute>
-            <attribute name="style" add="background-color: #E6E7E8;" separator=" "/>
+            <attribute name="style" add="background-color: #E6E7E8; --o-wsale-products-grid-gap: 16px;" separator=" "/>
         </xpath>
 
         <!-- Move the drop-zone before the alternative products -->

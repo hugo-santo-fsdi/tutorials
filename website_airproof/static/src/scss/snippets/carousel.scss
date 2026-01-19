@@ -20,31 +20,42 @@
             border-radius: 99px;
         }
     }
+
     .carousel-control-next::after {
         @include o-position-absolute($left: 0);
         background: o-color('o-color-1') url("/website_airproof/static/src/img/content/icons/arrow-right.svg") no-repeat center;
     }
+
     .carousel-control-prev::after {
         @include o-position-absolute($right: 0);
         background: o-color('o-color-1') url("/website_airproof/static/src/img/content/icons/arrow-left.svg") no-repeat center;
     }
+
     // Dynamic product carousel
     .s_dynamic_snippet_products {
         .dynamic_snippet_template .carousel-item .row > div { padding-top: 0.60rem; }
         .carousel-control-next::after { left: 70px; }
         .carousel-control-prev::after { right: 70px; }
     }
+
     // Custom template for dynamic product carousel
     .s_product_product_airproof {
+        &.o_wsale_products_opt_design_cards .oe_product_cart:hover {
+            --o-wsale-card-bg: #F0FDE3;
+            --o-wsale-card-border-color: #F0FDE3;
+        }
+
         .carousel-control-prev::after { border-radius: 10px 0 0 10px !important; }
         .carousel-control-next::after {
             border-radius: 0 10px 10px 0 !important;
             left: -4rem !important;
         }
+
         .carousel-control-prev {
             left: auto !important;
             right: 0 !important;
         }
+
         .carousel-control-next,
         .carousel-control-prev {
             opacity: 1;
@@ -55,6 +66,7 @@
                 background-color: white !important;
             }
         }
+
         .carousel-control-next:hover::after,
         .carousel-control-prev:hover::after {
             background-color: o-color('o-color-1') !important;
