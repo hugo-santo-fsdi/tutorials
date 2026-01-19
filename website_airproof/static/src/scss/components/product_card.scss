@@ -1,0 +1,15 @@
+#wrapwrap .o_wsale_products_opt_design_cards {
+    --o-wsale-card-info-padding: 1.5rem;
+
+    .oe_product_cart {
+        --o-wsale-card-thumb-background: transparent;
+        --o-wsale-card-transition: all .15s;
+
+        &:hover {
+            --o-wsale-card-bg: #{o-color('o-color-3')};
+            --o-wsale-card-border-color: #{o-color('o-color-3')};
+            --o-wsale-card-transform-hover: translate(-10px, -10px);
+        }
+    }
+        .oe_product_image_img { mix-blend-mode: multiply; }
+}

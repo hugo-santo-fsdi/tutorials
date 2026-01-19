@@ -40,10 +40,11 @@
             # SCSS
             'website_airproof/static/src/scss/font.scss',
             'website_airproof/static/src/scss/components/mouse_follower.scss',
+            'website_airproof/static/src/scss/components/product_card.scss',
             'website_airproof/static/src/scss/layout/header.scss',
             'website_airproof/static/src/scss/pages/product_page.scss',
             'website_airproof/static/src/scss/pages/shop.scss',
-            'website_airproof/static/src/scss/snippets/caroussel.scss',
+            'website_airproof/static/src/scss/snippets/carousel.scss',
             'website_airproof/static/src/scss/snippets/newsletter.scss',
             'website_airproof/static/src/snippets/s_airproof_carousel/000.scss',
             # JS
