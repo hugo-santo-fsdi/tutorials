@@ -1,78 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 <!-- HEADER -->
     <!-- Custom header -->
     <template id="header" inherit_id="website.layout" name="Airproof - Header" active="True">
         <xpath expr="//header//nav" position="replace">
-            <t t-call="website.navbar"
-                _navbar_classes.f="d-none d-lg-block p-0">
+            <t t-call="website.navbar" _navbar_classes.f="d-none d-lg-block p-0">
                 <div id="o_main_nav" class="o_main_nav flex-wrap">
                     <div aria-label="Top" class="o_header_hide_on_scroll">
                         <div class="container d-flex justify-content-between flex-wrap w-100 pt-2">
                             <ul class="o_header_search_left_col navbar-nav flex-wrap">
                                 <!-- Text element -->
-                                <t t-call="website.placeholder_header_text_element"
+                                <t
+                                    t-call="website.placeholder_header_text_element"
                                     _txt_elt_content.f="sentence"
-                                    _div_class.f="d-flex align-items-center h-100 px-2 text-muted"/>
+                                    _div_class.f="d-flex align-items-center h-100 px-2 text-muted" />
                             </ul>
                             <ul class="navbar-nav flex-wrap">
                                 <!-- Search bar -->
-                                <t t-call="website.placeholder_header_search_box"
+                                <t
+                                    t-call="website.placeholder_header_search_box"
                                     t-nocache="The searchbox should not cache previous searches."
                                     _input_classes.f="ps-3 pb-0 o_small bg-white border-bottom rounded-0"
-                                    _submit_classes.f="pe-3 me-3"/>
+                                    _submit_classes.f="pe-3 me-3" />
                                 <!-- Social Links -->
-                                <t t-call="website.placeholder_header_social_links"
-                                    _div_class.f="d-flex align-items-center h-100 px-1"/>
+                                <t t-call="website.placeholder_header_social_links" _div_class.f="d-flex align-items-center h-100 px-1" />
                             </ul>
                         </div>
                     </div>
-                    <div  aria-label="Bottom" class="container d-grid align-items-center w-100 py-2 o_grid_header_3_cols">
+                    <div aria-label="Bottom" class="container d-grid align-items-center w-100 py-2 o_grid_header_3_cols">
                         <!-- Navbar -->
-                        <t t-call="website.navbar_nav"
-                            _nav_class.f="me-4">
+                        <t t-call="website.navbar_nav" _nav_class.f="me-4">
                             <!-- Menu -->
                             <t t-foreach="website.menu_id.child_id" t-as="submenu">
-                                <t t-call="website.submenu"
-                                    item_class.f="nav-item"
-                                    link_class.f="nav-link"/>
+                                <t t-call="website.submenu" item_class.f="nav-item" link_class.f="nav-link" />
                             </t>
                         </t>
                         <!-- Brand -->
-                        <t t-call="website.placeholder_header_brand"
-                            _link_class.f="mw-100 mx-auto"/>
+                        <t t-call="website.placeholder_header_brand" _link_class.f="mw-100 mx-auto" />
                         <ul class="o_header_search_right_col navbar-nav align-items-center gap-2 ms-auto ps-3">
                             <!-- Language Selector -->
-                            <t t-call="website.placeholder_header_language_selector"
+                            <t
+                                t-call="website.placeholder_header_language_selector"
                                 _div_classes.f="h-100"
-                                _btn_class.f="btn-sm d-flex align-items-center h-100 rounded-sm p-2"/>
+                                _btn_class.f="btn-sm d-flex align-items-center h-100 rounded-sm p-2" />
                             <!-- Shopping cart -->
-                            <t t-call="website_sale.header_cart_link"
-                                _icon="true"
-                                _item_class.f="nav-item"
-                                _link_class.f="nav-link py-3"/>
+                            <t t-call="website_sale.header_cart_link" _icon="true" _item_class.f="nav-item" _link_class.f="nav-link py-3" />
                             <!-- Wishlist icon -->
-                            <t t-call="website_sale_wishlist.header_wishlist_link"
+                            <t
+                                t-call="website_sale_wishlist.header_wishlist_link"
                                 _icon="true"
                                 _item_class.f="nav-item me-lg-3"
-                                _link_class.f="nav-link py-3"/>
+                                _link_class.f="nav-link py-3" />
                             <!-- Sign In -->
-                            <t t-call="portal.placeholder_user_sign_in"
-                                _link_class.f="btn btn-primary d-flex align-items-center h-100 rounded-sm px-3"/>
+                            <t
+                                t-call="portal.placeholder_user_sign_in"
+                                _link_class.f="btn btn-primary d-flex align-items-center h-100 rounded-sm px-3" />
                             <!-- User Dropdown -->
-                            <t t-call="portal.user_dropdown"
+                            <t
+                                t-call="portal.user_dropdown"
                                 _user_name="true"
                                 _icon="true"
                                 _item_class.f="dropdown"
                                 _link_class.f="btn btn-primary d-flex align-items-center h-100 rounded-sm"
-                                _dropdown_menu_class.f="dropdown-menu-start"/>
+                                _dropdown_menu_class.f="dropdown-menu-start" />
                             <!-- Call To Action -->
-                            <t t-call="website.placeholder_header_call_to_action"/>
+                            <t t-call="website.placeholder_header_call_to_action" />
                         </ul>
                     </div>
                 </div>
             </t>
-            <t t-call="website.template_header_mobile"/>
+            <t t-call="website.template_header_mobile" />
         </xpath>
     </template>
 
@@ -83,7 +80,7 @@
                 <div class="row">
                     <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
                         <a href="/shop/airproof-mini-1" class="nav-link p-0" data-name="Menu Item">
-                            <img src="/web/image/website_airproof.img_mini" alt="Drone Airproof Mini" class="img-fluid img"/>
+                            <img src="/web/image/website_airproof.img_mini" alt="Drone Airproof Mini" class="img-fluid img" />
                             <div class="p-2">
                                 <font class="fw-bold">Airproof Mini</font>
                             </div>
@@ -91,7 +88,7 @@
                     </div>
                     <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
                         <a href="/shop/airproof-pro-2" class="nav-link p-0" data-name="Menu Item">
-                            <img src="/web/image/website_airproof.img_pro" alt="Drone Airproof Pro" class="img-fluid img"/>
+                            <img src="/web/image/website_airproof.img_pro" alt="Drone Airproof Pro" class="img-fluid img" />
                             <div class="p-2">
                                 <font class="fw-bold">Airproof Pro</font>
                             </div>
@@ -99,7 +96,7 @@
                     </div>
                     <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
                         <a href="/shop/airproof-robin-3" class="nav-link p-0" data-name="Menu Item">
-                            <img src="/web/image/website_airproof.img_robin" alt="Drone Airproof Robin" class="img-fluid img"/>
+                            <img src="/web/image/website_airproof.img_robin" alt="Drone Airproof Robin" class="img-fluid img" />
                             <div class="d-block p-2">
                                 <font class="fw-bold">Airproof Robin</font>
                             </div>
@@ -107,7 +104,7 @@
                     </div>
                     <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
                         <a href="/shop/airproof-falcon-4" class="nav-link p-0" data-name="Menu Item">
-                            <img src="/web/image/website_airproof.img_falcon" alt="Drone Airproof Falcon" class="img-fluid img"/>
+                            <img src="/web/image/website_airproof.img_falcon" alt="Drone Airproof Falcon" class="img-fluid img" />
                             <div class="d-block p-2">
                                 <font class="fw-bold">Airproof Falcon</font>
                             </div>
@@ -115,7 +112,7 @@
                     </div>
                     <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
                         <a href="/shop/airproof-eagle-5" class="nav-link p-0" data-name="Menu Item">
-                            <img src="/web/image/website_airproof.img_eagle" alt="Drone Airproof Eagle" class="img-fluid img"/>
+                            <img src="/web/image/website_airproof.img_eagle" alt="Drone Airproof Eagle" class="img-fluid img" />
                             <div class="d-block p-2">
                                 <font class="fw-bold">Airproof Eagle</font>
                             </div>
@@ -132,7 +129,11 @@
         <xpath expr="//div[@id='footer']" position="replace">
             <div id="footer" class="oe_structure" t-ignore="true" t-if="not no_footer">
                 <!-- Newsletter block -->
-                <section class="s_newsletter_block s_newsletter_list o_colored_level o_cc o_cc4 pt48 pb48" data-list-id="1" data-snippet="s_newsletter_block" data-name="Newsletter Block">
+                <section
+                    class="s_newsletter_block s_newsletter_list o_colored_level o_cc o_cc4 pt48 pb48"
+                    data-list-id="1"
+                    data-snippet="s_newsletter_block"
+                    data-name="Newsletter Block">
                     <div class="container">
                         <div class="row">
                             <div class="pt8 pb8 o_colored_level col-lg-6">
@@ -140,13 +141,22 @@
                                 <p>Don't miss the newsletter with news and special offers !</p>
                             </div>
                             <div class="pt40 pb8 o_colored_level col-lg-6">
-                                <div class="s_newsletter_subscribe_form s_newsletter_list js_subscribe" data-vxml="001" data-list-id="0" data-name="Newsletter Form" data-snippet="s_newsletter_subscribe_form">
+                                <div
+                                    class="s_newsletter_subscribe_form s_newsletter_list js_subscribe"
+                                    data-vxml="001"
+                                    data-list-id="0"
+                                    data-name="Newsletter Form"
+                                    data-snippet="s_newsletter_subscribe_form">
                                     <div class="js_subscribed_wrap d-none">
-                                        <p class="text-end text-success"><i class="fa fa-check-circle-o" role="img"/> Thanks for registering!</p>
+                                        <p class="text-end text-success"><i class="fa fa-check-circle-o" role="img" /> Thanks for registering!</p>
                                     </div>
                                     <div class="js_subscribe_wrap">
                                         <div class="input-group">
-                                            <input type="email" name="email" class="js_subscribe_value form-control border-0 me-3" placeholder="Your email..."/>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                class="js_subscribe_value form-control border-0 me-3"
+                                                placeholder="Your email..." />
                                             <a role="button" href="#" class="btn btn-primary o_cc o_cc3 js_subscribe_btn o_submit">Subscribe</a>
                                         </div>
                                     </div>
@@ -186,15 +196,22 @@
                             </div>
                             <div class="col col-md-4 col-lg-2 pb24">
                                 <p class="mb-4 text-muted small">Contact us</p>
-                                <p class="mb-4 small">Airproof<br/>10 Rue Van Hove<br/>1000 Brussel</p>
+                                <p class="mb-4 small">Airproof<br />10 Rue Van Hove<br />1000 Brussel</p>
                                 <ul class="list-unstyled">
                                     <li>
-                                        <img src="/web/image/website_airproof.img_phone" alt="Phone number" class="me-2 img img-fluid opacity-50"/>
+                                        <img src="/web/image/website_airproof.img_phone" alt="Phone number" class="me-2 img img-fluid opacity-50" />
                                         <a href="tel:+3222903490" class="o_force_ltr small">+32 2 290 34 90</a>
                                     </li>
                                     <li>
-                                        <img src="/web/image/website_airproof.img_envelop" alt="Contact email" class="me-2 img img-fluid opacity-50 o_we_force_no_transition"/>
-                                        <a href="mailto:contact@airproof.com" class="small" rel="nofollow noopener" target="_blank">contact@airproof.com</a>
+                                        <img
+                                            src="/web/image/website_airproof.img_envelop"
+                                            alt="Contact email"
+                                            class="me-2 img img-fluid opacity-50 o_we_force_no_transition" />
+                                        <a
+                                            href="mailto:contact@airproof.com"
+                                            class="small"
+                                            rel="nofollow noopener"
+                                            target="_blank">contact@airproof.com</a>
                                     </li>
                                 </ul>
                             </div>
@@ -210,16 +227,19 @@
         <xpath expr="//div[hasclass('o_footer_copyright')]/div[hasclass('container')]" position="replace">
             <div class="container pt24 pb24">
                 <div class="row d-flex flex-row align-items-center justify-content-between">
-                    <div class="col-12 col-md-6 col-lg-6 s_social_media text-start o_not_editable no_icon_color" data-snippet="s_social_media" data-name="Social Media">
+                    <div
+                        class="col-12 col-md-6 col-lg-6 s_social_media text-start o_not_editable no_icon_color"
+                        data-snippet="s_social_media"
+                        data-name="Social Media">
                         <h4 class="s_social_media_title d-none">Social Media</h4>
                         <a target="_blank" href="/website/social/facebook" class="s_social_media_facebook">
-                            <i class="fa rounded-circle shadow-sm fa-facebook text-o-color-5"/>
+                            <i class="fa rounded-circle shadow-sm fa-facebook text-o-color-5" />
                         </a>
                         <a target="_blank" href="/website/social/youtube" class="s_social_media_youtube">
-                            <i class="fa rounded-circle shadow-sm fa-youtube text-o-color-5"/>
+                            <i class="fa rounded-circle shadow-sm fa-youtube text-o-color-5" />
                         </a>
                         <a target="_blank" href="/website/social/instagram" class="s_social_media_instagram">
-                            <i class="fa rounded-circle shadow-sm fa-instagram text-o-color-5"/>
+                            <i class="fa rounded-circle shadow-sm fa-instagram text-o-color-5" />
                         </a>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">

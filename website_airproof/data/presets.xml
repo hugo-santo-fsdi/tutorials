@@ -1,110 +1,110 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 <!-- HEADER -->
     <!-- Disable Call-to-action in header // View template in: odoo/addons/website/views/website_templates.xml -->
     <record id="website.header_call_to_action" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
     <!-- Disable default header -->
     <record id="website.template_header_default" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
     <!-- Disable text element -->
     <record id="website.header_text_element" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
     <!-- Disable search bar -->
     <record id="website.header_search_box" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
     <!-- Disable social links -->
     <record id="website.header_social_links" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
     <!-- Activate language selector -->
     <record id="website.header_language_selector" model="ir.ui.view">
-        <field name="active" eval="True"/>
+        <field name="active" eval="True" />
     </record>
     <!-- Display only text for language selection -->
     <record id="website.header_language_selector_flag" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
 
 <!-- FOOTER -->
     <!-- Disable Default Footer -->
     <record id="website.footer_custom" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
     <!-- Enable Copyright -->
     <record id="website.footer_no_copyright" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
     <!-- Disable language selector -->
     <record id="portal.footer_language_selector" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
 
 <!-- SHOP PAGE -->
     <!-- Enable product categories in the left // View template in: odoo/addons/website_sale/views/templates.xml -->
     <record id="website_sale.products_categories" model="ir.ui.view">
-        <field name="active" eval="True"/>
+        <field name="active" eval="True" />
     </record>
     <!-- Disable product categories on top -->
     <record id="website_sale.products_categories_top" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
     <!-- Enable Collapse products categories -->
     <record id="website_sale.option_collapse_products_categories" model="ir.ui.view">
-        <field name="active" eval="True"/>
+        <field name="active" eval="True" />
     </record>
     <!-- Disable Collapse categories recursive -->
     <record id="website_sale.option_collapse_products_categories" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
     <!-- Enable Product Attributes filtring -->
     <record id="website_sale.products_attributes" model="ir.ui.view">
-        <field name="active" eval="True"/>
+        <field name="active" eval="True" />
     </record>
     <!-- Disable Search bar on the /shop page // // View template in: odoo/addons/website_sale/views/template.xml -->
     <record id="website_sale.search" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
 
 <!-- PRODUCT PAGE -->
     <!-- Disable Carousel indicators on the left -->
     <record id="website_sale.carousel_product_indicators_left" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
     <!-- Enable Carousel indicators at the bottom -->
     <record id="website_sale.carousel_product_indicators_bottom" model="ir.ui.view">
-        <field name="active" eval="True"/>
+        <field name="active" eval="True" />
     </record>
     <!-- Enable Wishlist on product // View template in: odoo/addons/website_sale_whishlist/views/website_sale_whishlist_template.xml  -->
     <record id="website_sale_wishlist.product_add_to_wishlist" model="ir.ui.view">
-        <field name="active" eval="True"/>
+        <field name="active" eval="True" />
     </record>
     <!-- Disable "Compare" button -->
     <record id="website_sale_comparison.product_add_to_compare" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
     <!-- Disable Quantity -->
     <record id="website_sale.product_quantity" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
     <!-- Disable Terms and conditions -->
     <record id="website_sale.product_terms_and_conditions" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
     <!-- Enable More information -->
     <record id="website_sale.accordion_more_information" model="ir.ui.view">
-        <field name="active" eval="True"/>
+        <field name="active" eval="True" />
     </record>
     <!-- Disable Specifications table at the bottom of the page -->
     <record id="website_sale_comparison.product_attributes_body" model="ir.ui.view">
-        <field name="active" eval="False"/>
+        <field name="active" eval="False" />
     </record>
     <!-- Enable Specifications table in the accordion -->
     <record id="website_sale_comparison.accordion_specs_item" model="ir.ui.view">
-        <field name="active" eval="True"/>
+        <field name="active" eval="True" />
     </record>
 </odoo>

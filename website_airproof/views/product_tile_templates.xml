@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <!-- Add link on product card -->
     <template id="products_item" inherit_id="website_sale.products_item" name="Airproof - Products item">
-        <xpath expr="//div[hasclass('o_wsale_product_information')]//t[@t-if='extra_actions']" position="after" >
+        <xpath expr="//div[hasclass('o_wsale_product_information')]//t[@t-if='extra_actions']" position="after">
             <a class="small text-dark pt-3 pb-1 order-9 text-decoration-none" t-att-href="product_href">
                 Discover more
-                <img src="/web/image/website_airproof.img_arrow_small" alt="" class="ms-2"/>
+                <img src="/web/image/website_airproof.img_arrow_small" alt="" class="ms-2" />
             </a>
         </xpath>
     </template>

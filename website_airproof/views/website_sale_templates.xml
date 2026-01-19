@@ -1,44 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 <!-- Replace cart icon in header -->
     <template id="header_cart_link" inherit_id="website_sale.header_cart_link" name="Airproof - Cart icon">
-        <xpath expr="//i" position="replace" >
-            <img src="/web/image/website_airproof.img_shopping" alt="shopping icon"/>
+        <xpath expr="//i" position="replace">
+            <img src="/web/image/website_airproof.img_shopping" alt="shopping icon" />
         </xpath>
     </template>
 
 <!-- SHOP PAGE -->
     <template id="products" inherit_id="website_sale.products" name="Airproof - Products">
         <xpath expr="//div[contains(@t-attf-class, 'oe_website_sale')]" position="attributes">
-            <attribute name="t-attf-class" add="pt-5" separator=" "/>
+            <attribute name="t-attf-class" add="pt-5" separator=" " />
         </xpath>
         <!-- Add banner -->
         <xpath expr="//*[@id='oe_structure_website_sale_products_1']" position="inside">
-            <section class="s_title bg-black-50 o_colored_level s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center pt88 pb88" data-vcss="001" data-snippet="s_title" data-scroll-background-ratio="0" data-name="Title" style="background-image: url('/web/image/website_airproof.img_topview3');">
-                <div class="o_we_bg_filter bg-black-50"/>
+            <section
+                class="s_title bg-black-50 o_colored_level s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center pt88 pb88"
+                data-vcss="001"
+                data-snippet="s_title"
+                data-scroll-background-ratio="0"
+                data-name="Title"
+                style="background-image: url('/web/image/website_airproof.img_topview3');">
+                <div class="o_we_bg_filter bg-black-50" />
                 <div class="container text-center">
-                    <h2 >Discover our amazing products</h2>
+                    <h2>Discover our amazing products</h2>
                 </div>
             </section>
         </xpath>
         <xpath expr="//div[hasclass('products_header')]" position="attributes">
-            <attribute name="class" add="justify-content-end " remove="justify-content-between" separator=" "/>
+            <attribute name="class" add="justify-content-end " remove="justify-content-between" separator=" " />
         </xpath>
         <!-- Force the display of eCommerce Category title everywhere -->
         <xpath expr="//*[@id='o_wsale_products_header']" position="attributes">
-            <attribute name="t-attf-class" add="o_wsale_products_header_show_category_title" separator=" "/>
+            <attribute name="t-attf-class" add="o_wsale_products_header_show_category_title" separator=" " />
         </xpath>
         <!-- Breadcrumb -->
         <xpath expr="//t[@t-call='website_sale.products_breadcrumb']/t" position="attributes">
-            <attribute name="t-valuef" add="flex-grow-1" remove="w-100" separator=" "/>
+            <attribute name="t-valuef" add="flex-grow-1" remove="w-100" separator=" " />
         </xpath>
         <!-- Move breadcrumb -->
         <xpath expr="//t[@t-call='website_sale.pricelist_list']" position="before">
-            <xpath expr="//t[@t-call='website_sale.products_breadcrumb']" position="move"/>
+            <xpath expr="//t[@t-call='website_sale.products_breadcrumb']" position="move" />
         </xpath>
         <!-- Button sort by -->
         <xpath expr="//t[@t-call='website_sale.sort']" position="attributes">
-            <attribute name="_classes.f" add="rounded px-3 py-1" separator=" "/>
+            <attribute name="_classes.f" add="rounded px-3 py-1" separator=" " />
         </xpath>
     </template>
 
@@ -46,7 +52,7 @@
     <template id="product" inherit_id="website_sale.product" name="Airproof - Product">
         <!-- Configure options of the product page -->
         <xpath expr="//section[@id='product_detail']" position="attributes">
-            <attribute name="class" add="o_wsale_product_page_opt_image_radius_medium" separator=" "/>
+            <attribute name="class" add="o_wsale_product_page_opt_image_radius_medium" separator=" " />
         </xpath>
         <!-- Add drop zone on all products -->
         <!-- <xpath expr="//section[@id='product_detail']" position="after">
@@ -57,10 +63,11 @@
     <template id="cta_wrapper" inherit_id="website_sale.cta_wrapper" name="Airproof - CTA Wrapper">
         <!-- Change icon "add to cart" -->
         <xpath expr="//*[@id='add_to_cart']/i[hasclass('fa-shopping-cart')]" position="replace">
-            <img src="/web/image/website_airproof.img_shopping" alt="Shopping icon" class="img img-fluid me-1"/> <span class="text-uppercase fw-bold">Add to cart</span>
+            <img src="/web/image/website_airproof.img_shopping" alt="Shopping icon" class="img img-fluid me-1" /> <span
+                class="text-uppercase fw-bold">Add to cart</span>
         </xpath>
         <xpath expr="//div[@id='product_option_block']" position="attributes">
-            <attribute name="t-attf-class" remove="w-100 w-sm-auto" separator=" "/>
+            <attribute name="t-attf-class" remove="w-100 w-sm-auto" separator=" " />
         </xpath>
     </template>
 
@@ -68,13 +75,16 @@
     <template id="carousel_product_indicators" inherit_id="website_sale.carousel_product_indicators" name="Airproof - Carousel product indicators">
         <!-- Center the indicators only for the "Bottom" display -->
         <xpath expr="//ol" position="attributes">
-            <attribute name="t-attf-class" add="justify-content-center p-3" separator=" "/>
+            <attribute name="t-attf-class" add="justify-content-center p-3" separator=" " />
         </xpath>
     </template>
 
-    <template id="carousel_product_indicators_bottom" inherit_id="website_sale.carousel_product_indicators_bottom" name="Airproof - Carousel Product Indicators Bottom">
+    <template
+        id="carousel_product_indicators_bottom"
+        inherit_id="website_sale.carousel_product_indicators_bottom"
+        name="Airproof - Carousel Product Indicators Bottom">
         <xpath expr="//t[@t-set='indicators_div_class']" position="attributes">
-            <attribute name="t-value" add="'justify-content-center p-3'" separator=" + "/>
+            <attribute name="t-value" add="'justify-content-center p-3'" separator=" + " />
         </xpath>
     </template>
 
@@ -82,23 +92,29 @@
     <template id="alternative_products" inherit_id="website_sale.alternative_products" name="Airproof - Alternative products">
         <!-- Title -->
         <xpath expr="//div[@id='oe_structure_website_sale_recommended_products']//*[hasclass('s_dynamic_snippet_title')]" position="attributes">
-            <attribute name="class" remove="d-flex flex-column flex-md-row justify-content-between" add="pt48 pb64" separator=" "/>
+            <attribute name="class" remove="d-flex flex-column flex-md-row justify-content-between" add="pt48 pb64" separator=" " />
             <attribute name="style">style="background-color: #E6E7E8;"</attribute>
         </xpath>
-        <xpath expr="//div[@id='oe_structure_website_sale_recommended_products']//*[hasclass('s_dynamic_snippet_title')]//h4/following-sibling::*[hasclass('lead')]" position="replace"/>
+        <xpath
+            expr="//div[@id='oe_structure_website_sale_recommended_products']//*[hasclass('s_dynamic_snippet_title')]//h4/following-sibling::*[hasclass('lead')]"
+            position="replace" />
         <xpath expr="//div[@id='oe_structure_website_sale_recommended_products']//*[hasclass('s_dynamic_snippet_title')]//h4" position="replace">
             <h2 class="text-center fw-bold">You might also like</h2>
         </xpath>
         <!-- Change template -->
         <xpath expr="//section[@data-snippet='s_dynamic_snippet_products']" position="attributes">
-            <attribute name="class" remove="s_product_product_borderless_1" add="s_product_product_airproof o_wsale_products_opt_layout_catalog o_wsale_products_opt_design_cards o_wsale_products_opt_name_color_regular o_wsale_products_opt_thumb_cover o_wsale_products_opt_img_hover_zoom_out_light o_wsale_products_opt_has_cta o_wsale_products_opt_actions_onhover o_wsale_products_opt_wishlist_fixed .o_wsale_products_opt_cc o_wsale_products_opt_cc1 o_wsale_products_opt_rounded_2 o_wsale_products_opt_actions_promote o_wsale_products_opt_actions_subtle o_wsale_products_opt_name_weight_bold" separator=" "/>
+            <attribute
+                name="class"
+                remove="s_product_product_borderless_1"
+                add="s_product_product_airproof o_wsale_products_opt_layout_catalog o_wsale_products_opt_design_cards o_wsale_products_opt_name_color_regular o_wsale_products_opt_thumb_cover o_wsale_products_opt_img_hover_zoom_out_light o_wsale_products_opt_has_cta o_wsale_products_opt_actions_onhover o_wsale_products_opt_wishlist_fixed .o_wsale_products_opt_cc o_wsale_products_opt_cc1 o_wsale_products_opt_rounded_2 o_wsale_products_opt_actions_promote o_wsale_products_opt_actions_subtle o_wsale_products_opt_name_weight_bold"
+                separator=" " />
             <attribute name="data-template-key">website_airproof.dynamic_filter_template_product_product_airproof</attribute>
-            <attribute name="style" add="background-color: #E6E7E8; --o-wsale-products-grid-gap: 16px;" separator=" "/>
+            <attribute name="style" add="background-color: #E6E7E8; --o-wsale-products-grid-gap: 16px;" separator=" " />
         </xpath>
 
         <!-- Move the drop-zone before the alternative products -->
         <xpath expr="//div[@t-field='product.website_description']" position="before">
-            <xpath expr="//div[@id='oe_structure_website_sale_product_2']" position="move"/>
+            <xpath expr="//div[@id='oe_structure_website_sale_product_2']" position="move" />
         </xpath>
     </template>
 </odoo>

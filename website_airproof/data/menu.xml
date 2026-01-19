@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo noupdate="1">
     <!-- Delete Default "Home" menu item -->
-    <delete model="website.menu" search="[('url','in', ['/', '/']), ('website_id', '=', 1)]"/>
+    <delete model="website.menu" search="[('url','in', ['/', '/']), ('website_id', '=', 1)]" />
     <!-- Delete Default "Blog" menu item -->
-    <delete model="website.menu" search="[('url','in', ['/', '/blog']), ('website_id', '=', 1)]"/>
+    <delete model="website.menu" search="[('url','in', ['/', '/blog']), ('website_id', '=', 1)]" />
     <!-- Delete Default "Shop" menu item -->
-    <delete model="website.menu" search="[('url','in', ['/', '/shop']), ('website_id', '=', 1)]"/>
+    <delete model="website.menu" search="[('url','in', ['/', '/shop']), ('website_id', '=', 1)]" />
     <!-- Delete Default "Contact us" menu item -->
-    <delete model="website.menu" search="[('url','in', ['/', '/contactus']), ('website_id', '=', 1)]"/>
+    <delete model="website.menu" search="[('url','in', ['/', '/contactus']), ('website_id', '=', 1)]" />
     <!-- Delete Default "About us" menu item -->
-    <delete model="website.menu" search="[('url','in', ['/', '/about-us']), ('website_id', '=', 1)]"/>
+    <delete model="website.menu" search="[('url','in', ['/', '/about-us']), ('website_id', '=', 1)]" />
 
     <!-- Waterproof drones item - Mega-menu -->
     <record id="menu_drones" model="website.menu">
-        <field name="is_mega_menu" eval="True"/>
+        <field name="is_mega_menu" eval="True" />
         <field name="name">Waterproof drones</field>
         <field name="parent_id" search="[
             ('url', '=', '#'),
-            ('website_id', '=', 1)]"/>
+            ('website_id', '=', 1)]" />
         <field name="website_id">1</field>
         <field name="sequence" type="int">10</field>
         <field name="mega_menu_content" type="html">
@@ -26,7 +26,7 @@
                     <div class="row">
                         <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
                             <a href="/shop/airproof-mini-1" class="nav-link p-0" data-name="Menu Item">
-                                <img src="/web/image/website_airproof.img_mini" alt="Drone Airproof Mini" class="img-fluid img"/>
+                                <img src="/web/image/website_airproof.img_mini" alt="Drone Airproof Mini" class="img-fluid img" />
                                 <div class="p-2">
                                     <font class="fw-bold">Airproof Mini</font>
                                 </div>
@@ -34,7 +34,7 @@
                         </div>
                         <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
                             <a href="/shop/airproof-pro-2" class="nav-link p-0" data-name="Menu Item">
-                                <img src="/web/image/website_airproof.img_pro" alt="Drone Airproof Pro" class="img-fluid img"/>
+                                <img src="/web/image/website_airproof.img_pro" alt="Drone Airproof Pro" class="img-fluid img" />
                                 <div class="p-2">
                                     <font class="fw-bold">Airproof Pro</font>
                                 </div>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
                             <a href="/shop/airproof-robin-3" class="nav-link p-0" data-name="Menu Item">
-                                <img src="/web/image/website_airproof.img_robin" alt="Drone Airproof Robin" class="img-fluid img"/>
+                                <img src="/web/image/website_airproof.img_robin" alt="Drone Airproof Robin" class="img-fluid img" />
                                 <div class="d-block p-2">
                                     <font class="fw-bold">Airproof Robin</font>
                                 </div>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
                             <a href="/shop/airproof-falcon-4" class="nav-link p-0" data-name="Menu Item">
-                                <img src="/web/image/website_airproof.img_falcon" alt="Drone Airproof Falcon" class="img-fluid img"/>
+                                <img src="/web/image/website_airproof.img_falcon" alt="Drone Airproof Falcon" class="img-fluid img" />
                                 <div class="d-block p-2">
                                     <font class="fw-bold">Airproof Falcon</font>
                                 </div>
@@ -58,7 +58,7 @@
                         </div>
                         <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
                             <a href="/shop/airproof-eagle-5" class="nav-link p-0" data-name="Menu Item">
-                                <img src="/web/image/website_airproof.img_eagle" alt="Drone Airproof Eagle" class="img-fluid img"/>
+                                <img src="/web/image/website_airproof.img_eagle" alt="Drone Airproof Eagle" class="img-fluid img" />
                                 <div class="d-block p-2">
                                     <font class="fw-bold">Airproof Eagle</font>
                                 </div>
@@ -77,7 +77,7 @@
         <field name="website_id">1</field>
         <field name="parent_id" search="[
             ('url', '=', '#'),
-            ('website_id', '=', 1)]"/>
+            ('website_id', '=', 1)]" />
         <field name="sequence" type="int">20</field>
     </record>
 
@@ -87,7 +87,7 @@
         <field name="url">#</field>
         <field name="parent_id" search="[
             ('url', '=', '#'),
-            ('website_id', '=', 1)]"/>
+            ('website_id', '=', 1)]" />
         <field name="website_id">1</field>
         <field name="sequence" type="int">30</field>
     </record>
@@ -95,14 +95,14 @@
             <field name="name">Our latest news</field>
             <field name="url">/blog/our-latest-news-2</field>
             <field name="website_id">1</field>
-            <field name="parent_id" ref="website_airproof.menu_blog"/>
+            <field name="parent_id" ref="website_airproof.menu_blog" />
             <field name="sequence" type="int">31</field>
         </record>
         <record id="menu_blog_item_2" model="website.menu">
             <field name="name">Tutorials</field>
             <field name="url">/blog/tutorials-3</field>
             <field name="website_id">1</field>
-            <field name="parent_id" ref="website_airproof.menu_blog"/>
+            <field name="parent_id" ref="website_airproof.menu_blog" />
             <field name="sequence" type="int">32</field>
         </record>
 
@@ -113,7 +113,7 @@
         <field name="website_id">1</field>
         <field name="parent_id" search="[
             ('url', '=', '#'),
-            ('website_id', '=', 1)]"/>
+            ('website_id', '=', 1)]" />
         <field name="sequence" type="int">40</field>
     </record>
 </odoo>
