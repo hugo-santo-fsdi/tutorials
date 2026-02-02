@@ -51,16 +51,14 @@
             "website_airproof/static/src/js/mouse_follower.js",
         ],
         # Builder Option Plugins
-        "html_builder.assets": [
-            "website_airproof/static/src/js/html_builder/plugins/background_option/background_shapes_definition.js",
-            "website_airproof/static/src/js/html_builder/plugins/options/header/header_template_option.xml",
-            "website_airproof/static/src/js/html_builder/plugins/options/footer_template_option.xml",
-            "website_airproof/static/src/js/html_builder/plugins/options/mega_menu_option.xml",
-            "website_airproof/static/src/js/html_builder/plugins/options/s_airproof_carousel_option.xml",
-            "website_airproof/static/src/js/html_builder/plugins/options/s_airproof_carousel_option_plugin.js",
-        ],
-        "html_editor.assets_editor": [
-            "website_airproof/static/src/js/html_editor/main/font/color_picker_gradient_tab.js",
+        "website.website_builder_assets": [
+            "website_airproof/static/src/website_builder/background_shapes.js",
+            "website_airproof/static/src/website_builder/color_picker_gradient_tab.js",
+            "website_airproof/static/src/website_builder/header_template_option.xml",
+            "website_airproof/static/src/website_builder/footer_template_option.xml",
+            "website_airproof/static/src/website_builder/mega_menu_option.xml",
+            "website_airproof/static/src/website_builder/airproof_carousel_option.xml",
+            "website_airproof/static/src/website_builder/airproof_carousel_option_plugin.js",
         ],
     },
     "new_page_templates": {

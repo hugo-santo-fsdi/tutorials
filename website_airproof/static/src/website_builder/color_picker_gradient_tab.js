@@ -1,4 +1,5 @@
 import {ColorPickerGradientTab} from "@html_editor/main/font/color_picker_gradient_tab";
+import {_t} from "@web/core/l10n/translation";
 import {registry} from "@web/core/registry";
 
 // Add your gradient to the default list
@@ -14,7 +15,14 @@ export class AirproofColorPickerGradientTab extends ColorPickerGradientTab {
 
 // Get the gradient lists and add the extended class to it.
 const colorPickerTabs = registry.category("color_picker_tabs");
-const gradientEntry = colorPickerTabs.get("html_editor.gradient");
 
-gradientEntry.component = AirproofColorPickerGradientTab;
-colorPickerTabs.category["html_editor.gradient"] = gradientEntry;
+colorPickerTabs.remove("html_editor.gradient");
+colorPickerTabs.add(
+    "html_editor.gradient",
+    {
+        id: "gradient",
+        name: _t("Gradient"),
+        component: AirproofColorPickerGradientTab,
+    },
+    {sequence: 60}
+);

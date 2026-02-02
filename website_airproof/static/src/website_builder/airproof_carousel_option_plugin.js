@@ -1,23 +1,6 @@
+import {BuilderAction} from "@html_builder/core/builder_action";
 import {Plugin} from "@html_editor/plugin";
 import {registry} from "@web/core/registry";
-import {BuilderAction} from "@html_builder/core/builder_action";
-
-class CarouselBubbleOptionPlugin extends Plugin {
-    static id = "carouselBubbleOption";
-    resources = {
-        // Declare the template and the selector
-        builder_options: [
-            {
-                template: "website_airproof.CarouselBubbleOption",
-                selector: ".x_bubble_item",
-            },
-        ],
-        // Declare your custom methods related to the options.
-        builder_actions: {
-            SetBubbleMarginAction,
-        },
-    };
-}
 
 // We do not need a custom method to handle the Bubble Shadow option
 // because the builder uses a standard method to apply/remove the
@@ -54,6 +37,23 @@ export class SetBubbleMarginAction extends BuilderAction {
         // Add the right "mb-" class to the element.
         editingElement.classList.add(`mb-${value}`);
     }
+}
+
+class CarouselBubbleOptionPlugin extends Plugin {
+    static id = "carouselBubbleOption";
+    resources = {
+        // Declare the template and the selector
+        builder_options: [
+            {
+                template: "website_airproof.CarouselBubbleOption",
+                selector: ".x_bubble_item",
+            },
+        ],
+        // Declare your custom methods related to the options.
+        builder_actions: {
+            SetBubbleMarginAction,
+        },
+    };
 }
 
 registry.category("website-plugins").add(CarouselBubbleOptionPlugin.id, CarouselBubbleOptionPlugin);
