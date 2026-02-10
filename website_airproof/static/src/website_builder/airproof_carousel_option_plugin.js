@@ -1,6 +1,13 @@
+import {BaseOptionComponent} from "@html_builder/core/utils";
 import {BuilderAction} from "@html_builder/core/builder_action";
 import {Plugin} from "@html_editor/plugin";
 import {registry} from "@web/core/registry";
+
+export class CarouselBubbleOption extends BaseOptionComponent {
+    // Declare the template and the selector
+    static template = "website_airproof.CarouselBubbleOption";
+    static selector = ".x_bubble_item";
+}
 
 // We do not need a custom method to handle the Bubble Shadow option
 // because the builder uses a standard method to apply/remove the
@@ -42,13 +49,7 @@ export class SetBubbleMarginAction extends BuilderAction {
 class CarouselBubbleOptionPlugin extends Plugin {
     static id = "carouselBubbleOption";
     resources = {
-        // Declare the template and the selector
-        builder_options: [
-            {
-                template: "website_airproof.CarouselBubbleOption",
-                selector: ".x_bubble_item",
-            },
-        ],
+        builder_options: [CarouselBubbleOption],
         // Declare your custom methods related to the options.
         builder_actions: {
             SetBubbleMarginAction,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<odoo noupdate="1">
     <!-- Background shapes -->
     <record id="shape_waves" model="ir.attachment">
         <field name="name">waves_01.svg</field>

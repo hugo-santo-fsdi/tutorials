@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<odoo noupdate="1">
 <!-- HEADER -->
     <!-- Disable Call-to-action in header // View template in: odoo/addons/website/views/website_templates.xml -->
     <record id="website.header_call_to_action" model="ir.ui.view">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
+<odoo noupdate="1">
     <record id="website.default_website" model="website">
         <field name="name">Airproof</field>
         <field name="logo" type="base64" file="website_airproof/static/src/img/content/branding/airproof-logo.svg" />

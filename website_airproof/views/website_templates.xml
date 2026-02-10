@@ -125,7 +125,7 @@
 
 <!-- FOOTER -->
     <!-- Custom Footer -->
-    <template id="footer" inherit_id="website.layout" name="Bonne Maman - Footer" active="True">
+    <template id="footer" inherit_id="website.layout" name="Airproof - Footer" active="True">
         <xpath expr="//div[@id='footer']" position="replace">
             <div id="footer" class="oe_structure" t-ignore="true" t-if="not no_footer">
                 <!-- Newsletter block -->
