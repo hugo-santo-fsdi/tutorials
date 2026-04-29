@@ -14,6 +14,7 @@
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
+        'views/estate_property_views.xml',
     ],
     'author': 'Odoo S.A.',
     'license': 'AGPL-3',
