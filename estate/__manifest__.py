@@ -12,7 +12,9 @@
     'category': 'Tutorials',
     'installable': True,
     'depends': ['base'],
-    'data': [],
+    'data': [
+        'security/ir.model.access.csv',
+    ],
     'author': 'Odoo S.A.',
     'license': 'AGPL-3',
 }
