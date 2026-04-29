@@ -9,3 +9,5 @@ tutorial's solutions, and one for the
 [Master the Odoo web framework](https://www.odoo.com/documentation/latest/developer/tutorials/master_odoo_web_framework.html)
 tutorial's solutions. For example, `17.0`, `17.0-discover-js-framework-solutions` and
 `17.0-master-odoo-web-framework-solutions`.
+
+Training verification update on 2026-04-29 to validate the Odoo.sh deployment pipeline.
