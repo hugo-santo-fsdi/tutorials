@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models
+from odoo.exceptions import UserError
 
 
 class EstateProperty(models.Model):
@@ -7,9 +8,21 @@ class EstateProperty(models.Model):
     _description = 'Real Estate Property'
 
     name = fields.Char(required=True)
+    state = fields.Selection(
+        selection=[
+            ('new', 'New'),
+            ('offer_received', 'Offer Received'),
+            ('offer_accepted', 'Offer Accepted'),
+            ('sold', 'Sold'),
+            ('canceled', 'Canceled'),
+        ],
+        default='new',
+        copy=False,
+    )
     offer_ids = fields.One2many('estate.property.offer', 'property_id', string='Offers')
     tag_ids = fields.Many2many('estate.property.tag', string='Tags')
     property_type_id = fields.Many2one('estate.property.type', string='Property Type')
+    buyer_id = fields.Many2one('res.partner', string='Buyer')
     description = fields.Text()
     postcode = fields.Char()
     date_availability = fields.Date()
@@ -50,3 +63,17 @@ class EstateProperty(models.Model):
         else:
             self.garden_area = 0
             self.garden_orientation = False
+
+    def action_sold(self):
+        for property_record in self:
+            if property_record.state == 'canceled':
+                raise UserError('A canceled property cannot be sold.')
+            property_record.state = 'sold'
+        return True
+
+    def action_cancel(self):
+        for property_record in self:
+            if property_record.state == 'sold':
+                raise UserError('A sold property cannot be canceled.')
+            property_record.state = 'canceled'
+        return True

@@ -21,6 +21,26 @@
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button
+                        name="action_sold"
+                        string="Sold"
+                        type="object"
+                        class="oe_highlight"
+                        invisible="state in ('sold', 'canceled')"
+                    />
+                    <button
+                        name="action_cancel"
+                        string="Cancel"
+                        type="object"
+                        invisible="state in ('sold', 'canceled')"
+                    />
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="new,offer_received,offer_accepted,sold,canceled"
+                    />
+                </header>
                 <sheet>
                     <div class="oe_title">
                         <h1>
@@ -38,12 +58,15 @@
                             <field name="expected_price"/>
                             <field name="best_price"/>
                             <field name="selling_price"/>
+                            <field name="buyer_id"/>
                         </group>
                     </group>
                     <notebook>
                         <page string="Offers">
                             <field name="offer_ids">
                                 <list>
+                                    <button name="action_accept" type="object" icon="fa-check" string="Accept"/>
+                                    <button name="action_refuse" type="object" icon="fa-times" string="Refuse"/>
                                     <field name="price"/>
                                     <field name="partner_id"/>
                                     <field name="validity"/>
@@ -51,6 +74,10 @@
                                     <field name="status"/>
                                 </list>
                                 <form>
+                                    <header>
+                                        <button name="action_accept" type="object" string="Accept" class="oe_highlight"/>
+                                        <button name="action_refuse" type="object" string="Refuse"/>
+                                    </header>
                                     <group>
                                         <field name="price"/>
                                         <field name="partner_id"/>

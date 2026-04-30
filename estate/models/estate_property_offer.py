@@ -2,6 +2,7 @@
 from datetime import timedelta
 
 from odoo import api, fields, models
+from odoo.exceptions import UserError
 
 
 class EstatePropertyOffer(models.Model):
@@ -32,3 +33,29 @@ class EstatePropertyOffer(models.Model):
             create_date = offer.create_date.date() if offer.create_date else fields.Date.context_today(self)
             if offer.date_deadline:
                 offer.validity = (offer.date_deadline - create_date).days
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        offers = super().create(vals_list)
+        offers.mapped('property_id').write({'state': 'offer_received'})
+        return offers
+
+    def action_accept(self):
+        for offer in self:
+            accepted_offer = offer.property_id.offer_ids.filtered(
+                lambda property_offer: property_offer.status == 'accepted' and property_offer != offer
+            )
+            if accepted_offer:
+                raise UserError('Only one offer can be accepted for a property.')
+            offer.status = 'accepted'
+            offer.property_id.write({
+                'buyer_id': offer.partner_id.id,
+                'selling_price': offer.price,
+                'state': 'offer_accepted',
+            })
+        return True
+
+    def action_refuse(self):
+        for offer in self:
+            offer.status = 'refused'
+        return True
