@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="action_estate_dashboard" model="ir.actions.client">
-        <field name="name">Dashboard</field>
-        <field name="tag">estate.dashboard</field>
-    </record>
-
-    <record id="action_estate_profile" model="ir.actions.client">
-        <field name="name">Profile</field>
-        <field name="tag">estate.profile</field>
-    </record>
 
     <record id="view_estate_property_tree" model="ir.ui.view">
         <field name="name">estate.property.tree</field>
@@ -100,17 +91,10 @@
 
     <menuitem id="estate_menu_root" name="Estate"/>
     <menuitem
-        id="estate_dashboard_menu_action"
-        name="Dashboard"
-        parent="estate_menu_root"
-        action="action_estate_dashboard"
-        sequence="1"
-    />
-    <menuitem
         id="estate_property_menu_action"
         name="Properties"
         parent="estate_menu_root"
         action="action_estate_property"
-        sequence="2"
+        sequence="1"
     />
 </odoo>
