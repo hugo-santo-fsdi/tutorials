@@ -7,7 +7,7 @@
     'description': """
         Real estate tutorial module
     """,
-    'version': '1.1',
+    'version': '1.2',
     'application': True,
     'category': 'Tutorials',
     'installable': True,
@@ -15,6 +15,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/estate_property_views.xml',
+        'views/estate_property_type_views.xml',
     ],
     'author': 'Odoo S.A.',
     'license': 'AGPL-3',
