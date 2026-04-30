@@ -1,26 +1,21 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Estate Tutorial",
+    'name': "Real Estate",
     'summary': """
         Real estate tutorial module
     """,
     'description': """
         Real estate tutorial module
     """,
-    'version': '0.5',
+    'version': '0.6',
     'application': True,
     'category': 'Tutorials',
     'installable': True,
-    'depends': ['base', 'web'],
+    'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
         'views/estate_property_views.xml',
     ],
-    'assets': {
-        'web.assets_backend': [
-            'estate/static/src/dashboard/**/*',
-        ],
-    },
     'author': 'Odoo S.A.',
     'license': 'AGPL-3',
 }
