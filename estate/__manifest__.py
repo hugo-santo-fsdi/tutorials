@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Estate",
+    'name': "Estate Tutorial",
     'summary': """
         Real estate tutorial module
     """,
     'description': """
         Real estate tutorial module
     """,
-    'version': '0.3',
+    'version': '0.4',
     'application': True,
     'category': 'Tutorials',
     'installable': True,
