@@ -77,6 +77,18 @@
                 <field name="garden"/>
                 <field name="garden_area"/>
                 <field name="garden_orientation"/>
+                <filter
+                    name="available"
+                    string="Available"
+                    domain="['|', ('state', '=', 'new'), ('state', '=', 'offer_received')]"
+                />
+                <group expand="0" string="Group By">
+                    <filter
+                        name="group_by_postcode"
+                        string="Postcode"
+                        context="{'group_by': 'postcode'}"
+                    />
+                </group>
             </search>
         </field>
     </record>
