@@ -6,6 +6,17 @@ class EstateProperty(models.Model):
     _name = 'estate.property'
     _description = 'Real Estate Property'
 
+    state = fields.Selection(
+        selection=[
+            ('new', 'New'),
+            ('offer_received', 'Offer Received'),
+            ('offer_accepted', 'Offer Accepted'),
+            ('sold', 'Sold'),
+            ('canceled', 'Canceled'),
+        ],
+        default='new',
+        copy=False,
+    )
     name = fields.Char(required=True)
     description = fields.Text()
     postcode = fields.Char()

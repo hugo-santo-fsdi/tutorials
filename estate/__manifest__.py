@@ -7,7 +7,7 @@
     'description': """
         Real estate tutorial module
     """,
-    'version': '0.6',
+    'version': '0.7',
     'application': True,
     'category': 'Tutorials',
     'installable': True,
